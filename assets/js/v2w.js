@@ -39,33 +39,12 @@ function initData()
 
 function startApp(densities)
 {
-  $('input#ingredient').on('keyup', function (e) {
+  var ingredientNames = _.map(densities, function (item) {
+    return item.name;
+  });
 
-    var $el = $(this);
-
-    if ($el.val().length > 2)
-    {
-      // search through densities and find matching ingredients
-      $searchName           = event.currentTarget.value;
-      var regString         = $searchName;
-      var regex             = new RegExp(regString, "i");
-
-      var ingredientResults = _.filter(densities, function (item) {
-        return regex.test(item.name);
-      });
-
-      if (ingredientResults !== undefined && ingredientResults.length > 0)
-      {
-        // map results to names
-        var ingredientNames = _.map(ingredientResults, function (item) {
-          return item.name;
-        });
-
-        if (ingredientNames !== undefined && ingredientNames.length > 0) {
-          $el.typeahead({source: ingredientNames});
-        }
-      }
-    }
-
+  $('input#ingredient').typeahead({
+    source: ingredientNames,
+    minLength: 3
   });
 }
