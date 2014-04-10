@@ -29,11 +29,6 @@
 
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
         <h3 class="text-muted"><a href="/">Volume2Weight</a></h3>
       </div>
 
@@ -48,7 +43,7 @@
         </thead>
         <tbody>
           <td>
-            <input type="text" id="ingredient">
+            <input type="text" id="ingredient" autocomplete="off">
           </td>
           <td>
             <input type="text" id="amount">
@@ -56,7 +51,7 @@
           <td>
             <input type="text" id="unit">
           </td>
-          <td><button class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span></button></td>
+          <td><button class="btn btn-xs btn-primary disabled"><span class="glyphicon glyphicon-ok"></span></button></td>
         </tbody>
       </table>
 
@@ -69,6 +64,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap3-typeahead.min.js"></script>
     <script src="/assets/js/underscore.min.js"></script>
     <script src="/assets/js/backbone.min.js"></script>
     <script src="/assets/js/v2w.js"></script>
