@@ -7,8 +7,6 @@ $(function() {
     densities = initData();
   }
 
-  console.log(densities);
-
   if (densities.length > 0) {
     startApp(densities);
   } else {
@@ -39,12 +37,30 @@ function initData()
 
 function startApp(densities)
 {
+  var $ingredientInput = $('input#ingredient');
+  var $amountInput = $('input#amount');
+  var $unitSelect = $('select#unit');
+  var $convertBtn = $('button#convert-btn');
+
   var ingredientNames = _.map(densities, function (item) {
     return item.name;
   });
 
-  $('input#ingredient').typeahead({
+  $ingredientInput.typeahead({
     source: ingredientNames,
     minLength: 3
+  });
+
+  $convertBtn.click(function (e) {
+    var ingredient = $ingredientInput.val();
+    var amount = $amountInput.val();
+    var unit = $unitSelect.children(':selected').val();
+
+    // find g/ml for this ingredient
+    var density = _.find(densities, function (item) {
+      return item.name == ingredient;
+    });
+
+    alert("Density is " + density.g_ml + "g/ml");
   });
 }

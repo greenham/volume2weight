@@ -43,15 +43,26 @@
         </thead>
         <tbody>
           <td>
-            <input type="text" id="ingredient" autocomplete="off">
+            <input type="text" id="ingredient" autocomplete="off" class="form-control">
           </td>
           <td>
-            <input type="text" id="amount">
+            <input type="text" id="amount" size="3" class="form-control">
           </td>
           <td>
-            <input type="text" id="unit">
+            <select id="unit" class="form-control">
+              <option value="t">t (teaspoons)</option>
+              <option value="T">T (tablespoons)</option>
+              <option value="floz">floz (fluid ounces)</option>
+              <option value="c" selected>c (cups)</option>
+              <option value="pt">pt (pints)</option>
+              <option value="qt">qt (quarts)</option>
+              <option value="gal">gal (gallons)</option>
+              <option value="ml">ml (milliliter)</option>
+              <option value="dl">dl (deciliter)</option>
+              <option value="l">l (liter)</option>
+            </select>
           </td>
-          <td><button class="btn btn-xs btn-primary disabled"><span class="glyphicon glyphicon-ok"></span></button></td>
+          <td><button class="btn btn-sm btn-primary" id="convert-btn"><span class="glyphicon glyphicon-ok"></span>&nbsp;Convert</button></td>
         </tbody>
       </table>
 
@@ -66,7 +77,6 @@
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/bootstrap3-typeahead.min.js"></script>
     <script src="/assets/js/underscore.min.js"></script>
-    <script src="/assets/js/backbone.min.js"></script>
     <script src="/assets/js/v2w.js"></script>
   </body>
 </html>
