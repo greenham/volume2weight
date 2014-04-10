@@ -12,8 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/assets/css/v2w.css" rel="stylesheet">
@@ -38,12 +36,13 @@
             <th>Ingredient</th>
             <th>Amount</th>
             <th>Unit</th>
-            <th></th>
+            <th width="10%">Grams</th>
+            <th width="10%">Pounds</th>
           </tr>
         </thead>
         <tbody>
           <td>
-            <input type="text" id="ingredient" autocomplete="off" class="form-control">
+            <input type="text" id="ingredient" autocomplete="off" class="form-control" placeholder="Start typing an ingredient name...">
           </td>
           <td>
             <input type="text" id="amount" size="3" class="form-control">
@@ -62,7 +61,8 @@
               <option value="l">l (liter)</option>
             </select>
           </td>
-          <td><button class="btn btn-sm btn-primary" id="convert-btn"><span class="glyphicon glyphicon-ok"></span>&nbsp;Convert</button></td>
+          <td class="grams"></td>
+          <td class="pounds"></td>
         </tbody>
       </table>
 
