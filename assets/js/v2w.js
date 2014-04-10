@@ -64,7 +64,7 @@ function startApp(densities)
 
   $ingredientInput.typeahead({
     source: ingredientNames,
-    minLength: 3
+    minLength: 2
   });
 
   var doConversion = function (e) {
@@ -100,18 +100,20 @@ function startApp(densities)
       var pounds = grams / g_lb;
       $el.parent().siblings('td.grams').html(grams.toFixed(2) + "g");
       $el.parent().siblings('td.pounds').html(pounds.toFixed(2) + "lb");
+      $resetBtn.show('fast');
     }
   };
 
-  /*$convertBtn.click(doConversion);*/
-  $ingredientInput.blur(doConversion);
-  $amountInput.blur(doConversion);
+  $ingredientInput.change(doConversion);
+  $amountInput.change(doConversion);
   $unitSelect.change(doConversion);
 
   $resetBtn.click(function (e) {
     $(this).parent().siblings('td.grams,td.pounds').html("");
     $ingredientInput.val("");
-    $amount.val("");
+    $amountInput.val("");
+    $(this).hide();
+    $ingredientInput.focus();
   });
 
   $ingredientInput.focus();
