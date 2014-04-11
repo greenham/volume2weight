@@ -1,10 +1,11 @@
-var V2W = {
+var V2W = (function ($) {
 
-  densities: [],
+  var app = {};
 
-  ingredientNames: [],
+  app.densities       = [];
+  app.ingredientNames = [];
 
-  unitConversions: {
+  app.unitConversions = {
       "ml":   1,
       "dl":   100,
       "l":    1000,
@@ -15,33 +16,27 @@ var V2W = {
       "pt":   473,
       "qt":   946,
       "gal":  3785
-  },
+  };
 
-  g_lb: 453,
+  app.g_lb = 453;
+  app.inputs = {};
+  app.buttons = {};
 
-  form: {
-    inputs: {
-      ingredient: $('input#ingredient'),
-      amount:     $('input#amount'),
-      unit:       $('select#unit')
-    },
-    buttons: {
-      reset: $('button#reset-btn')
-    }
-  },
-
-  initData: function () {
-    if (localStorage && localStorage.getItem('v2w-densities')) {
+  app.initData = function () {
+    if (localStorage && localStorage.getItem('v2w-densities'))
+    {
       this.densities = JSON.parse(localStorage.getItem('v2w-densities'));
       return true;
     }
 
     $.ajax({
-      async: false,
-      url: "server.php",
-      type: "POST",
-      data: {action: "initData"},
-      success: function (data)
+      async:    false,
+      url:      "server.php",
+      type:     "POST",
+      data:     {action: "initData"},
+      dataType: "json",
+      context:  this,
+      success:  function (data)
       {
         if (data.status == 'success')
         {
@@ -54,46 +49,48 @@ var V2W = {
           console.error(data.message);
           return false;
         }
-      },
-      dataType: 'json',
-      context: this
+      }
     });
 
     return false;
-  },
+  };
 
-  startApp: function () {
+  app.start = function () {
     this.initData();
+
+    this.inputs = {
+      ingredient: $('input#ingredient'),
+      amount:     $('input#amount'),
+      unit:       $('select#unit')
+    };
+
+    this.buttons = {
+      reset: $('button#reset-btn')
+    };
 
     this.ingredientNames = _.map(this.densities, function (item) {
       return item.name;
     });
 
-    this.form.inputs.ingredient.typeahead({
+    this.inputs.ingredient.typeahead({
       source: this.ingredientNames,
       minLength: 2
     });
 
-    this.form.inputs.ingredient.change(doConversion);
-    this.form.inputs.amount.change(doConversion);
-    this.form.inputs.unit.change(doConversion);
+    this.inputs.ingredient.change($.proxy(this.doConversion, this));
+    this.inputs.amount.change($.proxy(this.doConversion, this));
+    this.inputs.unit.change($.proxy(this.doConversion, this));
 
-    this.form.buttons.reset.click(function (e) {
-      $(this).parent().siblings('td.grams,td.pounds').html("");
-      this.form.inputs.ingredient.val("");
-      this.form.inputs.amount.val("");
-      $(this).hide();
-      this.form.inputs.ingredient.focus();
-    });
+    this.buttons.reset.click($.proxy(this.resetForm, this));
 
-    this.form.inputs.ingredient.focus();
-  },
+    this.inputs.ingredient.focus();
+  };
 
-  doConversion: function (e) {
-    var $el = $(this);
-    var ingredient = this.form.inputs.ingredient.val();
-    var amount = this.form.inputs.amount.val();
-    var unit = this.form.inputs.unit.children(':selected').val();
+  app.doConversion = function (e) {
+    var $el        = $(e.currentTarget);
+    var ingredient = this.inputs.ingredient.val();
+    var amount     = this.inputs.amount.val();
+    var unit       = this.inputs.unit.children(':selected').val();
 
     if (ingredient.length === 0 || amount.length === 0) {
       return false;
@@ -111,7 +108,7 @@ var V2W = {
     // do conversion based on units selected
     var grams;
     if (density.g_whole === null) {
-      grams = amount * density.g_ml * unitConversions[unit];
+      grams = amount * density.g_ml * this.unitConversions[unit];
     } else {
       grams = amount * density.g_whole;
       unit = "units";
@@ -119,20 +116,27 @@ var V2W = {
 
     if (grams !== null)
     {
-      var pounds = grams / g_lb;
+      var pounds = grams / this.g_lb;
       $el.parent().siblings('td.grams').html(grams.toFixed(2) + "g");
       $el.parent().siblings('td.pounds').html(pounds.toFixed(2) + "lb");
-      this.form.buttons.reset.show('fast');
+      this.buttons.reset.show('fast');
     }
-  }
-};
+  };
 
-$(function(V2W) {
+  app.resetForm = function (e) {
+    $el = $(e.currentTarget);
+    $el.hide();
+    $el.parent().siblings('td.grams,td.pounds').html("");
 
+    this.inputs.ingredient.val("");
+    this.inputs.amount.val("");
 
-  if (densities.length > 0) {
-    startApp(densities);
-  } else {
-    // @todo handle gracefully
-  }
-})(V2W);
+    this.inputs.ingredient.focus();
+  };
+
+  return app;
+})(jQuery);
+
+$(function () {
+  V2W.start();
+});
