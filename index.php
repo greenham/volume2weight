@@ -30,9 +30,23 @@
   <body>
 
     <div class="container">
-      <div class="header">
-        <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
-        <h1 class="text-muted"><a href="/">volum.io</a></h1>
+      <div class="header row">
+        <div class="col-md-4" id="branding">
+          <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
+          <h1 class="brand"><a href="/">volum.io</a></h1>
+        </div>
+        <div class="col-md-8" id="header-ad">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- volum.io - Header (Responsive) -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-6848900149610746"
+               data-ad-slot="5592894314"
+               data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
       </div>
 
       <div class="table-responsive">
@@ -75,9 +89,11 @@
                   <span class="glyphicon glyphicon-remove-circle"></span>
                 </button>
               </td>
-              <td class="grams conversion-result"></td>
-              <td class="pounds conversion-result"></td>
-              <td class="ounces conversion-result"></td>
+              <td colspan="3" class="conversion-result">
+                <span class="grams label label-info"></span>
+                <span class="pounds label label-info"></span>
+                <span class="ounces label label-info"></span>
+              </td>
             </tr>
           </tbody>
         </table>

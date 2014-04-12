@@ -142,18 +142,19 @@ var V2W = (function ($) {
       var gramsOutput = "";
       if (grams >= 1000) {
         kilos = (grams / 1000);
-        gramsOutput = this.formatNumber(kilos.toFixed(2)) + " kg";
+        gramsOutput = this.formatNumber(kilos.toFixed(2)) + " <em>kg</em>";
       } else {
-        gramsOutput = this.formatNumber(grams.toFixed(2)) + " g";
+        gramsOutput = this.formatNumber(grams.toFixed(2)) + " <em>g</em>";
       }
-      var poundsOutput = this.formatNumber((grams / this.g_lb).toFixed(2)) + " lb";
-      var ouncesOutput = this.formatNumber((grams / this.g_oz).toFixed(2)) + " oz";
+      var poundsOutput = this.formatNumber((grams / this.g_lb).toFixed(2)) + " <em>lb</em>";
+      var ouncesOutput = this.formatNumber((grams / this.g_oz).toFixed(2)) + " <em>oz</em>";
 
       var $resultsRow = $el.parent().parent().siblings('tr.results-row');
+      var $resultsCell = $resultsRow.children('td.conversion-result');
 
-      $resultsRow.children('td.grams').html(gramsOutput);
-      $resultsRow.children('td.pounds').html(poundsOutput);
-      $resultsRow.children('td.ounces').html(ouncesOutput);
+      $resultsCell.children('span.grams').html(gramsOutput);
+      $resultsCell.children('span.pounds').html(poundsOutput);
+      $resultsCell.children('span.ounces').html(ouncesOutput);
 
       this.buttons.reset.show('fast');
       if (this.firstResult === true)
