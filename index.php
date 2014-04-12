@@ -39,16 +39,20 @@
         <table id="recipe-table" class="table table-striped">
           <thead>
             <tr>
+              <th style="min-width: 24px;"></th>
               <th>Ingredient</th>
-              <th>Unit</th>
               <th>Amount</th>
-              <th></th>
+              <th>Unit</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td></td>
               <td>
                 <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="Start typing an ingredient name..." data-toggle="tooltip">
+              </td>
+              <td>
+                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
               </td>
               <td>
                 <select id="unit" class="form-control input-sm">
@@ -64,20 +68,16 @@
                   <option value="l">l (liters)</option>
                 </select>
               </td>
-              <td>
-                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
-              </td>
-              <td></td>
             </tr>
-            <tr class="results-row">
+            <tr class="results-row success">
+              <td>
+                <button class="btn btn-xs btn-default" id="reset-btn">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+              </td>
               <td class="grams conversion-result"></td>
               <td class="pounds conversion-result"></td>
               <td class="ounces conversion-result"></td>
-              <td>
-                <button class="btn btn-xs btn-default" id="reset-btn">
-                  <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;clear
-                </button>
-              </td>
             </tr>
           </tbody>
         </table>
