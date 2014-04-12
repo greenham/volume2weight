@@ -40,9 +40,9 @@
             <th width="40%">Ingredient</th>
             <th width="15%">Unit</th>
             <th width="10%">Amount</th>
-            <th width="10%">Grams</th>
-            <th width="10%">Pounds</th>
-            <th width="10%">Ounces</th>
+            <th width="10%">g/kg</th>
+            <th width="10%">lb</th>
+            <th width="10%">oz</th>
             <th width="5%"></th>
           </tr>
         </thead>
