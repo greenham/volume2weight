@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Convert volume measurements to weight for almost any ingredient. Converts US customary units to grams/pounds based on densities of ingredients.">
+    <meta name="keywords" content="convert,volume,weight,ingredient,recipe,metric,units,measurement">
+    <meta name="author" content="Green Ham Solutions LLC">
     <base href="/">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
 
@@ -91,7 +92,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', <?= $config['ga']['ua']; ?>, <?= $config['ga']['domain']; ?>);
+        ga('create', '<?= $config['ga']['ua']; ?>', '<?= $config['ga']['domain']; ?>');
         ga('send', 'pageview');
       </script>
     <? endif; ?>
