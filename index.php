@@ -31,6 +31,7 @@
 
     <div class="container">
       <div class="header">
+        <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
         <h1 class="text-muted"><a href="/">volum.io</a></h1>
       </div>
 

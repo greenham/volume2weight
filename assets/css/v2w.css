@@ -2,3 +2,8 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+a.logo img {
+  padding-top: 7px;
+  padding-right: 20px;
+}
