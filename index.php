@@ -37,11 +37,12 @@
       <table id="recipe-table" class="table table-striped">
         <thead>
           <tr>
-            <th width="50%">Ingredient</th>
+            <th width="40%">Ingredient</th>
             <th width="10%">Amount</th>
             <th width="15%">Unit</th>
             <th width="10%">Grams</th>
             <th width="10%">Pounds</th>
+            <th width="10%">Ounces</th>
             <th width="5%"></th>
           </tr>
         </thead>
@@ -61,13 +62,14 @@
               <option value="pt">pt (pints)</option>
               <option value="qt">qt (quarts)</option>
               <option value="gal">gal (gallons)</option>
-              <option value="ml">ml (milliliter)</option>
-              <option value="dl">dl (deciliter)</option>
-              <option value="l">l (liter)</option>
+              <option value="ml">ml (milliliters)</option>
+              <option value="dl">dl (deciliters)</option>
+              <option value="l">l (liters)</option>
             </select>
           </td>
-          <td class="grams"></td>
-          <td class="pounds"></td>
+          <td class="grams conversion-result"></td>
+          <td class="pounds conversion-result"></td>
+          <td class="ounces conversion-result"></td>
           <td><button class="btn btn-xs btn-default" id="reset-btn" style="display: none;"><span class="glyphicon glyphicon-remove-circle"></span></button></td>
         </tbody>
       </table>

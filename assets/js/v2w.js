@@ -18,8 +18,9 @@ var V2W = (function ($) {
       "gal":  3785
   };
 
-  app.g_lb = 453;
-  app.inputs = {};
+  app.g_lb    = 453;
+  app.g_oz    = 28;
+  app.inputs  = {};
   app.buttons = {};
 
   app.initData = function () {
@@ -117,8 +118,12 @@ var V2W = (function ($) {
     if (grams !== null)
     {
       var pounds = grams / this.g_lb;
-      $el.parent().siblings('td.grams').html(grams.toFixed(2) + "g");
-      $el.parent().siblings('td.pounds').html(pounds.toFixed(2) + "lb");
+      var ounces = grams / this.g_oz;
+
+      $el.parent().siblings('td.grams').html(grams.toFixed(2) + " g");
+      $el.parent().siblings('td.pounds').html(pounds.toFixed(2) + " lb");
+      $el.parent().siblings('td.ounces').html(ounces.toFixed(2) + " oz");
+
       this.buttons.reset.show('fast');
     }
   };
@@ -126,10 +131,11 @@ var V2W = (function ($) {
   app.resetForm = function (e) {
     $el = $(e.currentTarget);
     $el.hide();
-    $el.parent().siblings('td.grams,td.pounds').html("");
+    $el.parent().siblings('td.conversion-result').html("");
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");
+    this.inputs.unit.val("c");
 
     this.inputs.ingredient.focus();
   };
