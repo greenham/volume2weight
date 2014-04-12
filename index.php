@@ -1,3 +1,5 @@
+<? require_once('config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +11,7 @@
     <base href="/">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
 
-    <title>V2W</title>
+    <title>volum.io</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +21,7 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="assets/js//html5shiv.js"></script>
+      <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
   </head>
@@ -28,7 +30,7 @@
 
     <div class="container">
       <div class="header">
-        <h3 class="text-muted"><a href="/">Volume2Weight</a></h3>
+        <h1 class="text-muted"><a href="/">volum.io</a></h1>
       </div>
 
       <table id="recipe-table" class="table table-striped">
@@ -70,7 +72,7 @@
       </table>
 
       <div class="footer">
-        <p>&copy; Green Ham Solutions LLC 2014</p>
+        <p>&copy; <a href="https://greenhamsolutions.com" target="_blank">Green Ham Solutions LLC 2014</a></p>
       </div>
 
     </div> <!-- /container -->
@@ -81,5 +83,17 @@
     <script src="assets/js/bootstrap3-typeahead.min.js"></script>
     <script src="assets/js/underscore.min.js"></script>
     <script src="assets/js/v2w.js"></script>
+
+    <? if ($config['ga'] !== false): ?>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', <?= $config['ga']['ua']; ?>, <?= $config['ga']['domain']; ?>);
+        ga('send', 'pageview');
+      </script>
+    <? endif; ?>
   </body>
 </html>

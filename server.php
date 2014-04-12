@@ -1,5 +1,7 @@
 <?php
 
+require_once('config.php');
+
 const STATUS_SUCCESS = 'success';
 const STATUS_ERROR = 'error';
 
@@ -56,8 +58,11 @@ $db->close();
 
 function initData()
 {
+    global $config;
+    $dbconf = $config['db'];
+
     // initialize mysql connection
-    $db = new mysqli('localhost', 'v2w', 'v2w', 'volume2weight');
+    $db = new mysqli($dbconf['host'], $dbconf['user'], $dbconf['pass'], $dbconf['db']);
     if ($db->connect_error) {
         throw new Exception("Connection Error: ({$db->connect_errno}) {$db->connect_error}");
     }
