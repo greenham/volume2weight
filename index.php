@@ -89,7 +89,7 @@
                   <span class="glyphicon glyphicon-remove-circle"></span>
                 </button>
               </td>
-              <td colspan="3" class="conversion-result">
+              <td colspan="3" class="conversion-result text-right">
                 <span class="grams label label-info"></span>
                 <span class="pounds label label-info"></span>
                 <span class="ounces label label-info"></span>
