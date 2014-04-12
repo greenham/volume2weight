@@ -38,8 +38,8 @@
         <thead>
           <tr>
             <th width="40%">Ingredient</th>
-            <th width="10%">Amount</th>
             <th width="15%">Unit</th>
+            <th width="10%">Amount</th>
             <th width="10%">Grams</th>
             <th width="10%">Pounds</th>
             <th width="10%">Ounces</th>
@@ -49,9 +49,6 @@
         <tbody>
           <td>
             <input type="text" id="ingredient" autocomplete="off" class="form-control" placeholder="Start typing an ingredient name...">
-          </td>
-          <td>
-            <input type="text" id="amount" size="3" class="form-control">
           </td>
           <td>
             <select id="unit" class="form-control">
@@ -66,6 +63,9 @@
               <option value="dl">dl (deciliters)</option>
               <option value="l">l (liters)</option>
             </select>
+          </td>
+          <td>
+            <input type="text" id="amount" size="3" class="form-control">
           </td>
           <td class="grams conversion-result"></td>
           <td class="pounds conversion-result"></td>
