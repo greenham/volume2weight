@@ -117,12 +117,19 @@ var V2W = (function ($) {
 
     if (grams !== null)
     {
-      var pounds = grams / this.g_lb;
-      var ounces = grams / this.g_oz;
+      var gramsOutput = "";
+      if (grams >= 1000) {
+        kilos = (grams / 1000);
+        gramsOutput = this.formatNumber(kilos.toFixed(2)) + " kg";
+      } else {
+        gramsOutput = this.formatNumber(grams.toFixed(2)) + " g";
+      }
+      var poundsOutput = this.formatNumber((grams / this.g_lb).toFixed(2)) + " lb";
+      var ouncesOutput = this.formatNumber((grams / this.g_oz).toFixed(2)) + " oz";
 
-      $el.parent().siblings('td.grams').html(grams.toFixed(2) + " g");
-      $el.parent().siblings('td.pounds').html(pounds.toFixed(2) + " lb");
-      $el.parent().siblings('td.ounces').html(ounces.toFixed(2) + " oz");
+      $el.parent().siblings('td.grams').html(gramsOutput);
+      $el.parent().siblings('td.pounds').html(poundsOutput);
+      $el.parent().siblings('td.ounces').html(ouncesOutput);
 
       this.buttons.reset.show('fast');
     }
@@ -138,6 +145,10 @@ var V2W = (function ($) {
     this.inputs.unit.val("c");
 
     this.inputs.ingredient.focus();
+  };
+
+  app.formatNumber = function (num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   return app;
