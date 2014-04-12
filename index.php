@@ -34,6 +34,7 @@
         <div class="col-md-4" id="branding">
           <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
           <h1 class="brand"><a href="/">volum.io</a></h1>
+          <p class="small muted">Converting the world to metric, one ingredient at a time.</p>
         </div>
         <div class="col-md-8" id="header-ad">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -100,7 +101,7 @@
       </div>
 
       <div class="footer">
-        <p>&copy; <a href="https://greenhamsolutions.com" target="_blank">Green Ham Solutions LLC 2014</a></p>
+        <p class="pull-right">&copy; <a href="https://greenhamsolutions.com" target="_blank">Green Ham Solutions LLC 2014</a></p>
       </div>
 
     </div> <!-- /container -->
