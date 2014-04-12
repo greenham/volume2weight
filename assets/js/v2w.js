@@ -131,7 +131,7 @@ var V2W = (function ($) {
       $el.parent().siblings('td.pounds').html(poundsOutput);
       $el.parent().siblings('td.ounces').html(ouncesOutput);
 
-      this.buttons.reset.show('fast');
+      this.buttons.reset.show('fast').focus().parent('td').tooltip('show');
     }
   };
 

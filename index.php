@@ -48,30 +48,36 @@
           </tr>
         </thead>
         <tbody>
-          <td>
-            <input type="text" id="ingredient" autocomplete="off" class="form-control" placeholder="Start typing an ingredient name...">
-          </td>
-          <td>
-            <select id="unit" class="form-control">
-              <option value="t">t (teaspoons)</option>
-              <option value="T">T (tablespoons)</option>
-              <option value="floz">floz (fluid ounces)</option>
-              <option value="c" selected>c (cups)</option>
-              <option value="pt">pt (pints)</option>
-              <option value="qt">qt (quarts)</option>
-              <option value="gal">gal (gallons)</option>
-              <option value="ml">ml (milliliters)</option>
-              <option value="dl">dl (deciliters)</option>
-              <option value="l">l (liters)</option>
-            </select>
-          </td>
-          <td>
-            <input type="text" id="amount" size="3" class="form-control">
-          </td>
-          <td class="grams conversion-result"></td>
-          <td class="pounds conversion-result"></td>
-          <td class="ounces conversion-result"></td>
-          <td><button class="btn btn-xs btn-default" id="reset-btn" style="display: none;"><span class="glyphicon glyphicon-remove-circle"></span></button></td>
+          <tr>
+            <td>
+              <input type="text" id="ingredient" autocomplete="off" class="form-control" placeholder="Start typing an ingredient name...">
+            </td>
+            <td>
+              <select id="unit" class="form-control">
+                <option value="t">t (teaspoons)</option>
+                <option value="T">T (tablespoons)</option>
+                <option value="floz">floz (fluid ounces)</option>
+                <option value="c" selected>c (cups)</option>
+                <option value="pt">pt (pints)</option>
+                <option value="qt">qt (quarts)</option>
+                <option value="gal">gal (gallons)</option>
+                <option value="ml">ml (milliliters)</option>
+                <option value="dl">dl (deciliters)</option>
+                <option value="l">l (liters)</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" id="amount" size="3" class="form-control">
+            </td>
+            <td class="grams conversion-result"></td>
+            <td class="pounds conversion-result"></td>
+            <td class="ounces conversion-result"></td>
+            <td title="reset" data-toggle="tooltip" data-placement="top">
+              <button class="btn btn-sm btn-default" id="reset-btn">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
 

@@ -7,3 +7,7 @@ a.logo img {
   padding-top: 7px;
   padding-right: 20px;
 }
+
+#reset-btn {
+  display: none;
+}
