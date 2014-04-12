@@ -35,51 +35,53 @@
         <h1 class="text-muted"><a href="/">volum.io</a></h1>
       </div>
 
-      <table id="recipe-table" class="table table-striped">
-        <thead>
-          <tr>
-            <th width="40%">Ingredient</th>
-            <th width="15%">Unit</th>
-            <th width="10%">Amount</th>
-            <th width="10%">g/kg</th>
-            <th width="10%">lb</th>
-            <th width="10%">oz</th>
-            <th width="5%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <input type="text" id="ingredient" autocomplete="off" class="form-control" placeholder="Start typing an ingredient name...">
-            </td>
-            <td>
-              <select id="unit" class="form-control">
-                <option value="t">t (teaspoons)</option>
-                <option value="T">T (tablespoons)</option>
-                <option value="floz">floz (fluid ounces)</option>
-                <option value="c" selected>c (cups)</option>
-                <option value="pt">pt (pints)</option>
-                <option value="qt">qt (quarts)</option>
-                <option value="gal">gal (gallons)</option>
-                <option value="ml">ml (milliliters)</option>
-                <option value="dl">dl (deciliters)</option>
-                <option value="l">l (liters)</option>
-              </select>
-            </td>
-            <td>
-              <input type="text" id="amount" size="3" class="form-control">
-            </td>
-            <td class="grams conversion-result"></td>
-            <td class="pounds conversion-result"></td>
-            <td class="ounces conversion-result"></td>
-            <td title="reset" data-toggle="tooltip" data-placement="top">
-              <button class="btn btn-sm btn-default" id="reset-btn">
-                <span class="glyphicon glyphicon-remove-circle"></span>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table id="recipe-table" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Unit</th>
+              <th>Amount</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name...">
+              </td>
+              <td>
+                <select id="unit" class="form-control input-sm">
+                  <option value="t">t (teaspoons)</option>
+                  <option value="T">T (tablespoons)</option>
+                  <option value="floz">floz (fluid ounces)</option>
+                  <option value="c" selected>c (cups)</option>
+                  <option value="pt">pt (pints)</option>
+                  <option value="qt">qt (quarts)</option>
+                  <option value="gal">gal (gallons)</option>
+                  <option value="ml">ml (milliliters)</option>
+                  <option value="dl">dl (deciliters)</option>
+                  <option value="l">l (liters)</option>
+                </select>
+              </td>
+              <td>
+                <input type="number" id="amount" autocomplete="off" size="3" class="form-control input-sm">
+              </td>
+              <td class="grams conversion-result"></td>
+              <td class="pounds conversion-result"></td>
+              <td class="ounces conversion-result"></td>
+              <td title="reset" data-toggle="tooltip" data-placement="top" class="text-right">
+                <button class="btn btn-xs btn-default" id="reset-btn">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="footer">
         <p>&copy; <a href="https://greenhamsolutions.com" target="_blank">Green Ham Solutions LLC 2014</a></p>
