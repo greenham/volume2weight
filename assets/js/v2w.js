@@ -23,6 +23,8 @@ var V2W = (function ($) {
   app.inputs  = {};
   app.buttons = {};
 
+  app.firstResult = true;
+
   app.initData = function () {
     if (localStorage && localStorage.getItem('v2w-densities'))
     {
@@ -147,24 +149,34 @@ var V2W = (function ($) {
       var poundsOutput = this.formatNumber((grams / this.g_lb).toFixed(2)) + " lb";
       var ouncesOutput = this.formatNumber((grams / this.g_oz).toFixed(2)) + " oz";
 
-      $el.parent().siblings('td.grams').html(gramsOutput);
-      $el.parent().siblings('td.pounds').html(poundsOutput);
-      $el.parent().siblings('td.ounces').html(ouncesOutput);
+      var $resultsRow = $el.parent().parent().siblings('tr.results-row');
 
-      this.buttons.reset.show('fast').parent('td').tooltip('show');
+      $resultsRow.children('td.grams').html(gramsOutput);
+      $resultsRow.children('td.pounds').html(poundsOutput);
+      $resultsRow.children('td.ounces').html(ouncesOutput);
+
+      this.buttons.reset.show('fast');
+      if (this.firstResult === true)
+      {
+        $resultsRow.show('fast');
+        this.buttons.reset.focus();
+      }
+      this.firstResult = false;
     }
   };
 
   app.resetForm = function (e) {
     $el = $(e.currentTarget);
     $el.hide();
-    $el.parent().siblings('td.conversion-result').html("");
+    $el.parent().parent('tr.results-row').hide();
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");
     this.inputs.unit.val("c");
 
     this.inputs.ingredient.focus();
+
+    this.firstResult = true;
   };
 
   app.formatNumber = function (num) {

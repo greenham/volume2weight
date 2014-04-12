@@ -43,9 +43,6 @@
               <th>Unit</th>
               <th>Amount</th>
               <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -70,12 +67,15 @@
               <td>
                 <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
               </td>
+              <td></td>
+            </tr>
+            <tr class="results-row">
               <td class="grams conversion-result"></td>
               <td class="pounds conversion-result"></td>
               <td class="ounces conversion-result"></td>
-              <td title="reset" data-toggle="tooltip" data-placement="top" class="text-right">
+              <td>
                 <button class="btn btn-xs btn-default" id="reset-btn">
-                  <span class="glyphicon glyphicon-remove-circle"></span>
+                  <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;clear
                 </button>
               </td>
             </tr>

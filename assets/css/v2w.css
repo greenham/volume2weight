@@ -1,6 +1,6 @@
 .conversion-result {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 a.logo img {
@@ -9,5 +9,9 @@ a.logo img {
 }
 
 #reset-btn {
+  display: none;
+}
+
+.results-row {
   display: none;
 }
