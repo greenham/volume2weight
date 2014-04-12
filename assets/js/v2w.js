@@ -93,7 +93,21 @@ var V2W = (function ($) {
     var amount     = this.inputs.amount.val();
     var unit       = this.inputs.unit.children(':selected').val();
 
+    this.inputs.amount.tooltip('destroy').css('outline', 'none');
+    this.inputs.ingredient.tooltip('destroy').css('outline', 'none');
+
     if (ingredient.length === 0 || amount.length === 0) {
+      return false;
+    }
+
+    if ($.isNumeric(amount) === false || amount < 0) {
+      // @todo show a tooltip
+      this.inputs.amount.tooltip('hide')
+                        .attr('data-original-title', "Enter a valid number.")
+                        .tooltip('fixTitle')
+                        .tooltip('show')
+                        .css('outline', '1px solid red')
+                        .focus();
       return false;
     }
 
@@ -103,7 +117,13 @@ var V2W = (function ($) {
     });
 
     if (density === undefined) {
-      alert("No match found for '"+ingredient+"'");
+      // @todo show a tooltip
+      this.inputs.ingredient.tooltip('hide')
+                            .attr('data-original-title', "No match found for '" + ingredient + "'")
+                            .tooltip('fixTitle')
+                            .tooltip('show')
+                            .css('outline', '1px solid red')
+                            .focus();
     }
 
     // do conversion based on units selected
@@ -131,7 +151,7 @@ var V2W = (function ($) {
       $el.parent().siblings('td.pounds').html(poundsOutput);
       $el.parent().siblings('td.ounces').html(ouncesOutput);
 
-      this.buttons.reset.show('fast').focus().parent('td').tooltip('show');
+      this.buttons.reset.show('fast').parent('td').tooltip('show');
     }
   };
 

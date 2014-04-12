@@ -51,7 +51,7 @@
           <tbody>
             <tr>
               <td>
-                <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name...">
+                <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="Start typing an ingredient name..." data-toggle="tooltip">
               </td>
               <td>
                 <select id="unit" class="form-control input-sm">
@@ -68,7 +68,7 @@
                 </select>
               </td>
               <td>
-                <input type="number" id="amount" autocomplete="off" size="3" class="form-control input-sm">
+                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
               </td>
               <td class="grams conversion-result"></td>
               <td class="pounds conversion-result"></td>
