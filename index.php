@@ -39,7 +39,7 @@
         <table id="recipe-table" class="table table-striped">
           <thead>
             <tr>
-              <th style="min-width: 24px;"></th>
+              <th style="width: 48px;"></th>
               <th>Ingredient</th>
               <th>Amount</th>
               <th>Unit</th>
