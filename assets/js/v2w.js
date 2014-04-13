@@ -167,10 +167,10 @@ var V2W = (function ($) {
       var $resultsRow = $el.parent().parent().siblings('tr.results-row');
       var $resultsCell = $resultsRow.children('td.conversion-result');
 
-      $resultsCell.children('span.ingredient').html("<em>" + amount + " " + ((amount == 1) ? unitDesc.replace("s)", ")") : unitDesc) + "</em> of <u>" + ingredient + "</u> = ");
-      $resultsCell.children('span.grams').html(gramsOutput);
-      $resultsCell.children('span.pounds').html(poundsOutput);
-      $resultsCell.children('span.ounces').html(ouncesOutput);
+      $resultsCell.find('span.ingredient').html("<em>" + amount + " " + ((amount == 1) ? unitDesc.replace("s)", ")") : unitDesc) + "</em> of <u>" + ingredient + "</u> = ");
+      $resultsCell.find('span.grams').html(gramsOutput);
+      $resultsCell.find('span.pounds').html(poundsOutput);
+      $resultsCell.find('span.ounces').html(ouncesOutput);
 
       this.buttons.reset.show('fast');
       if (this.firstResult === true)

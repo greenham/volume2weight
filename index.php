@@ -92,13 +92,19 @@
             </tr>
             <tr class="results-row success">
               <td colspan="3" class="conversion-result text-right">
-                <span class="ingredient"></span>
-                <span class="grams label label-info"></span>
-                <span class="pounds label label-info"></span>
-                <span class="ounces label label-info"></span>
-                <button class="btn btn-xs btn-default" id="reset-btn">
-                  <span class="glyphicon glyphicon-remove-circle"></span>
-                </button>
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="ingredient"></span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="grams label label-info"></span>
+                    <span class="pounds label label-info"></span>
+                    <span class="ounces label label-info"></span>
+                    <button class="btn btn-xs btn-default" id="reset-btn">
+                      <span class="glyphicon glyphicon-remove-circle"></span>
+                    </button>
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody>

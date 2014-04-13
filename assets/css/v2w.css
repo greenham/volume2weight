@@ -29,4 +29,8 @@ h1.brand {
   #header-ad {
     padding: 20px;
   }
+
+  .conversion-result {
+    font-size: 12px;
+  }
 }
