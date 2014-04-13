@@ -86,6 +86,10 @@ var V2W = (function ($) {
 
     this.buttons.reset.click($.proxy(this.resetForm, this));
 
+    this.inputs.ingredient.tooltip();
+    this.inputs.amount.tooltip();
+    this.inputs.unit.tooltip();
+
     this.inputs.ingredient.focus();
   };
 

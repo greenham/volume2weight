@@ -68,7 +68,7 @@
                 <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
               </td>
               <td>
-                <select id="unit" class="form-control input-sm">
+                <select id="unit" class="form-control input-sm" title="Select units to convert..." data-toggle="tooltip">
                   <optgroup label="US Volume">
                     <option value="t">t (teaspoons)</option>
                     <option value="T">T (tablespoons)</option>
@@ -105,7 +105,9 @@
       </div>
 
       <div class="footer">
-        <p class="pull-right">&copy; <a href="https://greenhamsolutions.com" target="_blank">Green Ham Solutions LLC 2014</a></p>
+        <p class="pull-right">
+          &copy; <?= date('Y'); ?> <a href="https://greenhamsolutions.com" target="_blank"><img src="https://greenhamsolutions.com/favicon.ico"> Green Ham Solutions LLC</a>
+        </p>
       </div>
 
     </div> <!-- /container -->
