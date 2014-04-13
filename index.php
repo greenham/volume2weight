@@ -34,7 +34,7 @@
         <div class="col-md-4" id="branding">
           <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
           <h1 class="brand"><a href="/">volum.io</a></h1>
-          <p class="small muted">Converting the world to metric, one ingredient at a time.</p>
+          <!-- <p class="small muted"></p> -->
         </div>
         <div class="col-md-8" id="header-ad">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
