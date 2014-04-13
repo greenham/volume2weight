@@ -54,7 +54,6 @@
         <table id="recipe-table" class="table table-striped">
           <thead>
             <tr>
-              <th style="width: 48px;"></th>
               <th>Ingredient</th>
               <th>Amount</th>
               <th>Unit</th>
@@ -62,7 +61,6 @@
           </thead>
           <tbody>
             <tr>
-              <td></td>
               <td>
                 <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="Start typing an ingredient name..." data-toggle="tooltip">
               </td>
@@ -71,29 +69,35 @@
               </td>
               <td>
                 <select id="unit" class="form-control input-sm">
-                  <option value="t">t (teaspoons)</option>
-                  <option value="T">T (tablespoons)</option>
-                  <option value="floz">floz (fluid ounces)</option>
-                  <option value="c" selected>c (cups)</option>
-                  <option value="pt">pt (pints)</option>
-                  <option value="qt">qt (quarts)</option>
-                  <option value="gal">gal (gallons)</option>
-                  <option value="ml">ml (milliliters)</option>
-                  <option value="dl">dl (deciliters)</option>
-                  <option value="l">l (liters)</option>
+                  <optgroup label="US Volume">
+                    <option value="t">t (teaspoons)</option>
+                    <option value="T">T (tablespoons)</option>
+                    <option value="floz">floz (fluid ounces)</option>
+                    <option value="c" selected>c (cups)</option>
+                    <option value="pt">pt (pints)</option>
+                    <option value="qt">qt (quarts)</option>
+                    <option value="gal">gal (gallons)</option>
+                  </optgroup>
+                  <optgroup label="Metric Volume">
+                    <option value="ml">ml (milliliters)</option>
+                    <option value="dl">dl (deciliters)</option>
+                    <option value="l">l (liters)</option>
+                  </optgroup>
+                  <optgroup label="Weights">
+                    <option value="oz">oz (ounces)</option>
+                    <option value="lb">lb (pounds)</option>
+                  </optgroup>
                 </select>
               </td>
             </tr>
             <tr class="results-row success">
-              <td>
-                <button class="btn btn-xs btn-default" id="reset-btn">
-                  <span class="glyphicon glyphicon-remove-circle"></span>
-                </button>
-              </td>
               <td colspan="3" class="conversion-result text-right">
                 <span class="grams label label-info"></span>
                 <span class="pounds label label-info"></span>
                 <span class="ounces label label-info"></span>
+                <button class="btn btn-xs btn-default" id="reset-btn">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
               </td>
             </tr>
           </tbody>

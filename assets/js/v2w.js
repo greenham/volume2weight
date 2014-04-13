@@ -93,7 +93,7 @@ var V2W = (function ($) {
     var $el        = $(e.currentTarget);
     var ingredient = this.inputs.ingredient.val();
     var amount     = this.inputs.amount.val();
-    var unit       = this.inputs.unit.children(':selected').val();
+    var unit       = this.inputs.unit.find('option:selected').val();
 
     this.inputs.amount.tooltip('destroy').css('outline', 'none');
     this.inputs.ingredient.tooltip('destroy').css('outline', 'none');
@@ -113,28 +113,34 @@ var V2W = (function ($) {
       return false;
     }
 
-    // find density for this ingredient
-    var density = _.find(this.densities, function (item) {
-      return item.name == ingredient;
-    });
-
-    if (density === undefined) {
-      // @todo show a tooltip
-      this.inputs.ingredient.tooltip('hide')
-                            .attr('data-original-title', "No match found for '" + ingredient + "'")
-                            .tooltip('fixTitle')
-                            .tooltip('show')
-                            .css('outline', '1px solid red')
-                            .focus();
-    }
-
-    // do conversion based on units selected
     var grams;
-    if (density.g_whole === null) {
-      grams = amount * density.g_ml * this.unitConversions[unit];
+
+    if (unit === "oz" || unit === "lb") {
+      // straight conversion, no density needed
+      grams = amount * ((unit === "oz") ? this.g_oz : this.g_lb);
     } else {
-      grams = amount * density.g_whole;
-      unit = "units";
+      // find density for this ingredient
+      var density = _.find(this.densities, function (item) {
+        return item.name == ingredient;
+      });
+
+      if (density === undefined) {
+        // @todo show a tooltip
+        this.inputs.ingredient.tooltip('hide')
+                              .attr('data-original-title', "No match found for '" + ingredient + "'")
+                              .tooltip('fixTitle')
+                              .tooltip('show')
+                              .css('outline', '1px solid red')
+                              .focus();
+      }
+
+      // do conversion based on units selected
+      if (density.g_whole === null) {
+        grams = amount * density.g_ml * this.unitConversions[unit];
+      } else {
+        grams = amount * density.g_whole;
+        unit = "units";
+      }
     }
 
     if (grams !== null)
