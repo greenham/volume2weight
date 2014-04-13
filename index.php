@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Convert volume measurements to weight for almost any ingredient. Converts US customary units to grams/pounds based on densities of ingredients.">
-    <meta name="keywords" content="convert,volume,weight,ingredient,recipe,metric,units,measurement">
+    <meta name="keywords" content="convert,volume,weight,ingredient,recipe,metric,units,measurement,free">
     <meta name="author" content="Green Ham Solutions LLC">
     <base href="/">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
 
-    <title>volum.io</title>
+    <title>volum.io - free volume to weight converter</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
         <div class="col-md-4" id="branding">
           <a class="logo" href="/"><img src="assets/img/logo-32.png" align="left"></a>
           <h1 class="brand"><a href="/">volum.io</a></h1>
-          <!-- <p class="small muted"></p> -->
+          <p class="small muted">free volume to weight converter</p>
         </div>
         <div class="col-md-8" id="header-ad">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
