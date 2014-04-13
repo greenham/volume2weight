@@ -92,6 +92,7 @@
             </tr>
             <tr class="results-row success">
               <td colspan="3" class="conversion-result text-right">
+                <span class="ingredient"></span>
                 <span class="grams label label-info"></span>
                 <span class="pounds label label-info"></span>
                 <span class="ounces label label-info"></span>

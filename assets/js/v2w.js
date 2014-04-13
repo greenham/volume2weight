@@ -4,6 +4,8 @@ var V2W = (function ($) {
 
   app.densities       = [];
   app.ingredientNames = [];
+  app.inputs          = {};
+  app.buttons         = {};
 
   app.unitConversions = {
       "ml":   1,
@@ -18,10 +20,8 @@ var V2W = (function ($) {
       "gal":  3785
   };
 
-  app.g_lb    = 453;
-  app.g_oz    = 28;
-  app.inputs  = {};
-  app.buttons = {};
+  app.g_lb = 453;
+  app.g_oz = 28;
 
   app.firstResult = true;
 
@@ -59,7 +59,11 @@ var V2W = (function ($) {
   };
 
   app.start = function () {
-    this.initData();
+    var started = this.initData();
+
+    if (started === false) {
+      // @todo handle this gracefully
+    }
 
     this.inputs = {
       ingredient: $('input#ingredient'),
@@ -97,7 +101,12 @@ var V2W = (function ($) {
     var $el        = $(e.currentTarget);
     var ingredient = this.inputs.ingredient.val();
     var amount     = this.inputs.amount.val();
-    var unit       = this.inputs.unit.find('option:selected').val();
+
+    var selectedUnit = this.inputs.unit.find('option:selected');
+    var unit         = selectedUnit.val();
+    var unitDesc     = selectedUnit.text();
+
+    var grams;
 
     this.inputs.amount.tooltip('destroy').css('outline', 'none');
     this.inputs.ingredient.tooltip('destroy').css('outline', 'none');
@@ -107,7 +116,6 @@ var V2W = (function ($) {
     }
 
     if ($.isNumeric(amount) === false || amount < 0) {
-      // @todo show a tooltip
       this.inputs.amount.tooltip('hide')
                         .attr('data-original-title', "Enter a valid number.")
                         .tooltip('fixTitle')
@@ -116,8 +124,6 @@ var V2W = (function ($) {
                         .focus();
       return false;
     }
-
-    var grams;
 
     if (unit === "oz" || unit === "lb") {
       // straight conversion, no density needed
@@ -129,7 +135,6 @@ var V2W = (function ($) {
       });
 
       if (density === undefined) {
-        // @todo show a tooltip
         this.inputs.ingredient.tooltip('hide')
                               .attr('data-original-title', "No match found for '" + ingredient + "'")
                               .tooltip('fixTitle')
@@ -162,6 +167,7 @@ var V2W = (function ($) {
       var $resultsRow = $el.parent().parent().siblings('tr.results-row');
       var $resultsCell = $resultsRow.children('td.conversion-result');
 
+      $resultsCell.children('span.ingredient').html("<em>" + amount + " " + ((amount == 1) ? unitDesc.replace("s)", ")") : unitDesc) + "</em> of <u>" + ingredient + "</u> = ");
       $resultsCell.children('span.grams').html(gramsOutput);
       $resultsCell.children('span.pounds').html(poundsOutput);
       $resultsCell.children('span.ounces').html(ouncesOutput);
