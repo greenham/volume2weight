@@ -185,7 +185,7 @@ var V2W = (function ($) {
   app.resetForm = function (e) {
     $el = $(e.currentTarget);
     $el.hide();
-    $el.parent().parent('tr.results-row').hide();
+    $el.parents('tr.results-row').hide();
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");
