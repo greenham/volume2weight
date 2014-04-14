@@ -96,11 +96,11 @@
       <div class="footer">
         <div class="col-md-8">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- volum.io - Header (Responsive) -->
+          <!-- volum.io - Footer (Responsive) -->
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-6848900149610746"
-               data-ad-slot="5592894314"
+               data-ad-slot="5680292711"
                data-ad-format="auto"></ins>
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
