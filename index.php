@@ -53,7 +53,7 @@
                 <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
               </td>
               <td>
-                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" title="Enter an amount to convert..." data-toggle="tooltip">
+                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" placeholder="Enter an amount to convert..." title="Enter an amount to convert..." data-toggle="tooltip">
               </td>
               <td>
                 <select id="unit" class="form-control input-sm" title="Select units to convert..." data-toggle="tooltip">

@@ -186,7 +186,7 @@ var V2W = (function ($) {
         this.templates.ingredient({
           amount:     amount,
           units:      ((amount == 1) ? unitDesc.slice(0, unitDesc.length-1) : unitDesc),
-          ingredient: ingredient.toUpperCase()
+          ingredient: ingredient
         })
       );
       $resultsCell.find('span.grams').html(gramsOutput);
