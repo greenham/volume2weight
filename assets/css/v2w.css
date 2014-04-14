@@ -1,11 +1,19 @@
-.conversion-result {
-  font-weight: bold;
-  font-size: 20px;
+.header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1.brand {
+  margin: 0;
 }
 
 a.logo img {
   padding-top: 7px;
   padding-right: 20px;
+}
+
+.conversion-result {
+  font-size: 24px;
 }
 
 #reset-btn {
@@ -16,20 +24,7 @@ a.logo img {
   display: none;
 }
 
-h1.brand {
-  margin: 0;
-}
-
-.header {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 @media screen and (max-width:768px) {
-  #header-ad {
-    padding: 20px;
-  }
-
   .conversion-result {
     font-size: 12px;
   }

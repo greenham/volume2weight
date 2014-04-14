@@ -25,6 +25,11 @@ var V2W = (function ($) {
 
   app.firstResult = true;
 
+  app.templates = {
+    ingredient: _.template("<strong><%= amount %> <%= units %></strong> of <u><%= ingredient %></u> = "),
+    measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>")
+  };
+
   app.initData = function () {
     if (localStorage && localStorage.getItem('v2w-densities'))
     {
@@ -88,6 +93,12 @@ var V2W = (function ($) {
     this.inputs.amount.change($.proxy(this.doConversion, this));
     this.inputs.unit.change($.proxy(this.doConversion, this));
 
+    /*this.inputs.unit.keyup(function (e) {
+      if (e.keyCode == '38' || e.keyCode == '40') {
+        $.proxy(this.doConversion, this);
+      }
+    });*/
+
     this.buttons.reset.click($.proxy(this.resetForm, this));
 
     this.inputs.ingredient.tooltip();
@@ -106,7 +117,7 @@ var V2W = (function ($) {
     var unit         = selectedUnit.val();
     var unitDesc     = selectedUnit.text();
 
-    var grams;
+    var grams, kilos, pounds, ounces;
 
     this.inputs.amount.tooltip('destroy').css('outline', 'none');
     this.inputs.ingredient.tooltip('destroy').css('outline', 'none');
@@ -136,7 +147,7 @@ var V2W = (function ($) {
 
       if (density === undefined) {
         this.inputs.ingredient.tooltip('hide')
-                              .attr('data-original-title', "No match found for '" + ingredient + "'")
+                              .attr('data-original-title', "No ingredient matching '" + ingredient + "'")
                               .tooltip('fixTitle')
                               .tooltip('show')
                               .css('outline', '1px solid red')
@@ -157,17 +168,27 @@ var V2W = (function ($) {
       var gramsOutput = "";
       if (grams >= 1000) {
         kilos = (grams / 1000);
-        gramsOutput = this.formatNumber(kilos.toFixed(2)) + " <em>kg</em>";
+        gramsOutput = this.templates.measure({num: kilos, abbr: "kg"});
       } else {
-        gramsOutput = this.formatNumber(grams.toFixed(2)) + " <em>g</em>";
+        gramsOutput = this.templates.measure({num: grams, abbr: "g"});
       }
-      var poundsOutput = this.formatNumber((grams / this.g_lb).toFixed(2)) + " <em>lb</em>";
-      var ouncesOutput = this.formatNumber((grams / this.g_oz).toFixed(2)) + " <em>oz</em>";
+
+      pounds = grams / this.g_lb;
+      ounces = grams / this.g_oz;
+
+      var poundsOutput = this.templates.measure({num: pounds, abbr: "lb"});
+      var ouncesOutput = this.templates.measure({num: ounces, abbr: "oz"});
 
       var $resultsRow = $el.parent().parent().siblings('tr.results-row');
       var $resultsCell = $resultsRow.children('td.conversion-result');
 
-      $resultsCell.find('span.ingredient').html("<em>" + amount + " " + ((amount == 1) ? unitDesc.replace("s)", ")") : unitDesc) + "</em> of <u>" + ingredient + "</u> = ");
+      $resultsCell.find('span.ingredient').html(
+        this.templates.ingredient({
+          amount:     amount,
+          units:      ((amount == 1) ? unitDesc.slice(0, unitDesc.length-1) : unitDesc),
+          ingredient: ingredient.toUpperCase()
+        })
+      );
       $resultsCell.find('span.grams').html(gramsOutput);
       $resultsCell.find('span.pounds').html(poundsOutput);
       $resultsCell.find('span.ounces').html(ouncesOutput);
@@ -184,8 +205,8 @@ var V2W = (function ($) {
 
   app.resetForm = function (e) {
     $el = $(e.currentTarget);
-    $el.hide();
-    $el.parents('tr.results-row').hide();
+    $el.hide()
+       .parents('tr.results-row').hide();
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");
@@ -196,13 +217,13 @@ var V2W = (function ($) {
     this.firstResult = true;
   };
 
-  app.formatNumber = function (num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
   return app;
 })(jQuery);
 
 $(function () {
   V2W.start();
 });
+
+var formatNumber = function (num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
