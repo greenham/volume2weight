@@ -79,15 +79,7 @@
               </td>
             </tr>
             <tr class="results-row success">
-              <td colspan="3" class="conversion-result">
-                  <span class="ingredient"></span>
-                  <span class="grams label label-info"></span>
-                  <span class="pounds label label-warning"></span>
-                  <span class="ounces label label-danger"></span>
-                  <button class="btn btn-xs btn-default" id="reset-btn">
-                    <span class="glyphicon glyphicon-remove-circle"></span>
-                  </button>
-              </td>
+              <td colspan="3" class="conversion-result"></td>
             </tr>
           </tbody>
         </table>

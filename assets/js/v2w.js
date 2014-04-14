@@ -26,8 +26,8 @@ var V2W = (function ($) {
   app.firstResult = true;
 
   app.templates = {
-    ingredient: _.template("<strong><%= amount %> <%= units %></strong> of <u><%= ingredient %></u> = "),
-    measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>")
+    measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>"),
+    resultCell: _.template('<span class="ingredient"><strong><%= amount %> <%= units %></strong> of <em><%= ingredient %></em> = </span><span class="grams label label-info"><%= grams %></span><span class="pounds label label-warning"><%= pounds %></span><span class="ounces label label-danger"><%= ounces %></span><button class="btn btn-xs btn-default" id="reset-btn"><span class="glyphicon glyphicon-remove-circle"></span></button>')
   };
 
   app.initData = function () {
@@ -76,10 +76,6 @@ var V2W = (function ($) {
       unit:       $('select#unit')
     };
 
-    this.buttons = {
-      reset: $('button#reset-btn')
-    };
-
     this.ingredientNames = _.map(this.densities, function (item) {
       return item.name;
     });
@@ -89,23 +85,15 @@ var V2W = (function ($) {
       minLength: 2
     });
 
-    this.inputs.ingredient.change($.proxy(this.doConversion, this));
-    this.inputs.amount.change($.proxy(this.doConversion, this));
-    this.inputs.unit.change($.proxy(this.doConversion, this));
+    this.inputs.ingredient.change($.proxy(this.doConversion, this)).tooltip().focus();
+    this.inputs.amount.change($.proxy(this.doConversion, this)).tooltip();
+    this.inputs.unit.change($.proxy(this.doConversion, this)).tooltip();
 
     /*this.inputs.unit.keyup(function (e) {
       if (e.keyCode == '38' || e.keyCode == '40') {
         $.proxy(this.doConversion, this);
       }
     });*/
-
-    this.buttons.reset.click($.proxy(this.resetForm, this));
-
-    this.inputs.ingredient.tooltip();
-    this.inputs.amount.tooltip();
-    this.inputs.unit.tooltip();
-
-    this.inputs.ingredient.focus();
   };
 
   app.doConversion = function (e) {
@@ -182,22 +170,20 @@ var V2W = (function ($) {
       var $resultsRow = $el.parent().parent().siblings('tr.results-row');
       var $resultsCell = $resultsRow.children('td.conversion-result');
 
-      $resultsCell.find('span.ingredient').html(
-        this.templates.ingredient({
-          amount:     amount,
-          units:      ((amount == 1) ? unitDesc.slice(0, unitDesc.length-1) : unitDesc),
-          ingredient: ingredient
-        })
-      );
-      $resultsCell.find('span.grams').html(gramsOutput);
-      $resultsCell.find('span.pounds').html(poundsOutput);
-      $resultsCell.find('span.ounces').html(ouncesOutput);
+      $resultsCell.html(this.templates.resultCell({
+        amount:     amount,
+        units:      ((amount == 1) ? unitDesc.slice(0, unitDesc.length-1) : unitDesc),
+        ingredient: ingredient,
+        grams:      gramsOutput,
+        pounds:     poundsOutput,
+        ounces:     ouncesOutput
+      }));
 
-      this.buttons.reset.show('fast');
-      if (this.firstResult === true)
-      {
+      this.buttons.reset = $('button#reset-btn');
+      this.buttons.reset.on('click', $.proxy(this.resetForm, this)).show('fast');
+
+      if (this.firstResult === true) {
         $resultsRow.show('fast');
-        this.buttons.reset.focus();
       }
       this.firstResult = false;
     }

@@ -16,8 +16,8 @@ a.logo img {
   font-size: 28px;
 }
 
-#reset-btn {
-  display: none;
+.conversion-result span {
+  margin: 0 5px;
 }
 
 .results-row {
