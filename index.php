@@ -43,8 +43,8 @@
           <thead>
             <tr>
               <th>Ingredient</th>
-              <th>Amount</th>
-              <th>Unit</th>
+              <th width="20%">Amount</th>
+              <th width="20%">Unit</th>
             </tr>
           </thead>
           <tbody>
@@ -53,10 +53,10 @@
                 <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
               </td>
               <td>
-                <input type="text" id="amount" autocomplete="off" size="3" class="form-control input-sm" placeholder="Enter an amount to convert..." title="Enter an amount to convert..." data-toggle="tooltip">
+                <input type="number" id="amount" autocomplete="off" size="3" class="form-control input-sm" placeholder="Enter an amount to convert..." title="" data-toggle="tooltip">
               </td>
               <td>
-                <select id="unit" class="form-control input-sm" title="Select units to convert..." data-toggle="tooltip">
+                <select id="unit" class="form-control input-sm" title="" data-toggle="tooltip">
                   <optgroup label="US Volume">
                     <option value="t">teaspoons</option>
                     <option value="T">tablespoons</option>
