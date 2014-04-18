@@ -27,6 +27,8 @@ var V2W = (function ($) {
 
   app.templates = {
     measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>"),
+    inputRow:   _.template('<tr class="input-row">'+$('tbody tr.input-row').html()+'</tr>'),
+    resultsRow: _.template('<tr class="results-row text-right">'+$('tbody tr.results-row').html()+'</tr>'),
     resultCell: _.template('<span class="ingredient"><strong><%= amount %> <%= units %></strong> of <em><%= ingredient %></em> = </span><span class="grams label label-info"><%= grams %></span><span class="pounds label label-warning"><%= pounds %></span><span class="ounces label label-danger"><%= ounces %></span><button class="btn btn-xs btn-default" id="reset-btn"><span class="glyphicon glyphicon-remove-circle"></span></button>')
   };
 
@@ -97,9 +99,13 @@ var V2W = (function ($) {
   };
 
   app.doConversion = function (e) {
-    var $el        = $(e.currentTarget);
-    var ingredient = this.inputs.ingredient.val();
-    var amount     = this.inputs.amount.val();
+    var $el          = $(e.currentTarget);
+    var $inputRow    = $el.parent().parent();
+    var $resultsRow  = $inputRow.siblings('tr.results-row');
+    var $resultsCell = $resultsRow.children('td.conversion-result');
+
+    var ingredient   = this.inputs.ingredient.val();
+    var amount       = this.inputs.amount.val();
 
     var selectedUnit = this.inputs.unit.find('option:selected');
     var unit         = selectedUnit.val();
@@ -154,7 +160,8 @@ var V2W = (function ($) {
     if (grams !== null)
     {
       var gramsOutput = "";
-      if (grams >= 1000) {
+      if (grams >= 1000)
+      {
         kilos = (grams / 1000);
         gramsOutput = this.templates.measure({num: kilos, abbr: "kg"});
       } else {
@@ -166,9 +173,6 @@ var V2W = (function ($) {
 
       var poundsOutput = this.templates.measure({num: pounds, abbr: "lb"});
       var ouncesOutput = this.templates.measure({num: ounces, abbr: "oz"});
-
-      var $resultsRow = $el.parent().parent().siblings('tr.results-row');
-      var $resultsCell = $resultsRow.children('td.conversion-result');
 
       $resultsCell.html(this.templates.resultCell({
         amount:     amount,
@@ -191,8 +195,7 @@ var V2W = (function ($) {
 
   app.resetForm = function (e) {
     $el = $(e.currentTarget);
-    $el.hide()
-       .parents('tr.results-row').hide();
+    $el.hide().parents('tr.results-row').hide();
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");

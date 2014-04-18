@@ -48,12 +48,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="input-row">
               <td>
                 <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
               </td>
               <td>
-                <input type="number" id="amount" autocomplete="off" size="3" class="form-control input-sm" placeholder="Enter an amount to convert..." title="" data-toggle="tooltip">
+                <input type="number" id="amount" autocomplete="off" size="3" min="0" class="form-control input-sm" placeholder="Enter an amount to convert..." title="" data-toggle="tooltip">
               </td>
               <td>
                 <select id="unit" class="form-control input-sm" title="" data-toggle="tooltip">
@@ -78,7 +78,7 @@
                 </select>
               </td>
             </tr>
-            <tr class="results-row success">
+            <tr class="results-row text-right">
               <td colspan="3" class="conversion-result"></td>
             </tr>
           </tbody>
