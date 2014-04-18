@@ -91,14 +91,14 @@ var V2W = (function ($) {
     this.inputs.amount.change($.proxy(this.doConversion, this)).tooltip();
     this.inputs.unit.change($.proxy(this.doConversion, this)).tooltip();
 
-    /*this.inputs.unit.keyup(function (e) {
-      if (e.keyCode == '38' || e.keyCode == '40') {
-        $.proxy(this.doConversion, this);
-      }
-    });*/
+    this.inputs.unit.keyup($.proxy(this.doConversion, this));
   };
 
   app.doConversion = function (e) {
+    if (e.type == "keyup" && e.keyCode != "38" && e.keyCode != "40") {
+      return false;
+    }
+
     var $el          = $(e.currentTarget);
     var $inputRow    = $el.parent().parent();
     var $resultsRow  = $inputRow.siblings('tr.results-row');
