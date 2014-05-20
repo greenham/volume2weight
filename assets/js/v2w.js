@@ -87,8 +87,8 @@ var V2W = (function ($) {
       minLength: 2
     });
 
-    this.inputs.ingredient.change($.proxy(this.doConversion, this)).tooltip().focus();
-    this.inputs.amount.change($.proxy(this.doConversion, this)).tooltip();
+    this.inputs.ingredient.change($.proxy(this.doConversion, this)).tooltip();
+    this.inputs.amount.change($.proxy(this.doConversion, this)).tooltip().focus();
     this.inputs.unit.change($.proxy(this.doConversion, this)).tooltip();
 
     this.inputs.unit.keyup($.proxy(this.doConversion, this));
@@ -201,7 +201,7 @@ var V2W = (function ($) {
     this.inputs.amount.val("");
     this.inputs.unit.val("c");
 
-    this.inputs.ingredient.focus();
+    this.inputs.amount.focus();
 
     this.firstResult = true;
   };
