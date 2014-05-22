@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="table-responsive well" id="converter">
   <table id="recipe-table" class="table table-striped">
     <thead>
       <tr>

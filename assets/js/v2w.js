@@ -199,7 +199,7 @@ var V2W = (function ($) {
 
     this.inputs.ingredient.val("");
     this.inputs.amount.val("");
-    this.inputs.unit.val("c");
+    this.inputs.unit.val("t");
 
     this.inputs.amount.focus();
 
