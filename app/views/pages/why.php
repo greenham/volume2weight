@@ -5,8 +5,8 @@
 
     <p>Two reasons, primarily.</p>
 
-    <h2>Accuracy</h2>
-    <h2>Speed & Efficiency</h2>
+    <h2>1. Accuracy</h2>
+    <h2>2. Speed & Efficiency</h2>
 
     <p>To demonstrate the difference in accuracy, check out this video from <a href="http://www.chefsteps.com">ChefSteps</a>:</p>
 

@@ -1,13 +1,13 @@
 <?php
 
-$allowed_pages = array('converter', 'why', 'about');
+$allowed_pages = array('converter', 'why', 'about', 'kitchen_scales');
 $default_page = 'converter';
 
 $request = $_REQUEST;
 
 if ( ! empty($request) || isset($request['p']))
 {
-    $page = $request['p'];
+    $page = str_replace('-', '_', $request['p']);
 }
 else
 {
