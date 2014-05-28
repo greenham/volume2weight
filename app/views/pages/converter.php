@@ -4,18 +4,21 @@
       <table id="recipe-table" class="table table-striped">
         <thead>
           <tr>
-            <th width="20%">Amount</th>
+            <th width="10%">Amount</th>
             <th width="20%">Unit</th>
             <th>Ingredient</th>
+            <th>Grams</th>
+            <th>Pounds</th>
+            <th>Ounces</th>
           </tr>
         </thead>
         <tbody>
           <tr class="input-row">
             <td>
-              <input type="number" id="amount" autocomplete="off" size="3" min="0" class="form-control input-sm" placeholder="Amount to convert..." title="" data-toggle="tooltip">
+              <input type="number" id="amount" autocomplete="off" size="3" min="0" class="form-control input-lg" placeholder="" title="" data-toggle="tooltip">
             </td>
             <td>
-              <select id="unit" class="form-control input-sm" title="" data-toggle="tooltip">
+              <select id="unit" class="form-control input-lg" title="" data-toggle="tooltip">
                 <optgroup label="US Volume">
                   <option value="t" selected>teaspoons</option>
                   <option value="T">tablespoons</option>
@@ -37,11 +40,11 @@
               </select>
             </td>
             <td>
-              <input type="text" id="ingredient" autocomplete="off" class="form-control input-sm" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
+              <input type="text" id="ingredient" autocomplete="off" class="form-control input-lg" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
             </td>
-          </tr>
-          <tr class="results-row text-right">
-            <td colspan="3" class="conversion-result"></td>
+            <td class="grams-result"></td>
+            <td class="pounds-result"></td>
+            <td class="ounces-result"></td>
           </tr>
         </tbody>
       </table>

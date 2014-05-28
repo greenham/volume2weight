@@ -4,6 +4,7 @@ var V2W = (function ($) {
 
   app.densities       = [];
   app.ingredientNames = [];
+  app.table           = null;
   app.inputs          = {};
   app.buttons         = {};
 
@@ -23,13 +24,10 @@ var V2W = (function ($) {
   app.g_lb = 453;
   app.g_oz = 28;
 
-  app.firstResult = true;
-
   app.templates = {
     measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>"),
     inputRow:   _.template('<tr class="input-row">'+$('tbody tr.input-row').html()+'</tr>'),
-    resultsRow: _.template('<tr class="results-row text-right">'+$('tbody tr.results-row').html()+'</tr>'),
-    resultCell: _.template('<span class="ingredient"><strong><%= amount %> <%= units %></strong> of <em><%= ingredient %></em> = </span><span class="grams label label-info"><%= grams %></span><span class="pounds label label-warning"><%= pounds %></span><span class="ounces label label-danger"><%= ounces %></span><button class="btn btn-xs btn-default" id="reset-btn"><span class="glyphicon glyphicon-remove-circle"></span></button>')
+    resultCell: _.template('<h3><%= amount %></h3>')
   };
 
   app.initData = function () {
@@ -72,6 +70,8 @@ var V2W = (function ($) {
       // @todo handle this gracefully
     }
 
+    this.table = $('#recipe-table');
+
     this.inputs = {
       ingredient: $('input#ingredient'),
       amount:     $('input#amount'),
@@ -99,17 +99,17 @@ var V2W = (function ($) {
       return false;
     }
 
-    var $el          = $(e.currentTarget);
-    var $inputRow    = $el.parent().parent();
-    var $resultsRow  = $inputRow.siblings('tr.results-row');
-    var $resultsCell = $resultsRow.children('td.conversion-result');
+    var $el          = $(e.currentTarget)
+      , $inputRow    = $el.parent().parent()
+      , $gramsCell   = $inputRow.find('.grams-result')
+      , $poundsCell  = $inputRow.find('.pounds-result')
+      , $ouncesCell  = $inputRow.find('.ounces-result');
 
-    var ingredient   = this.inputs.ingredient.val();
-    var amount       = this.inputs.amount.val();
-
-    var selectedUnit = this.inputs.unit.find('option:selected');
-    var unit         = selectedUnit.val();
-    var unitDesc     = selectedUnit.text();
+    var ingredient   = this.inputs.ingredient.val()
+      , amount       = this.inputs.amount.val()
+      , selectedUnit = this.inputs.unit.find('option:selected')
+      , unit         = selectedUnit.val()
+      , unitDesc     = selectedUnit.text();
 
     var grams, kilos, pounds, ounces;
 
@@ -121,12 +121,7 @@ var V2W = (function ($) {
     }
 
     if ($.isNumeric(amount) === false || amount < 0) {
-      this.inputs.amount.tooltip('hide')
-                        .attr('data-original-title', "Enter a valid number.")
-                        .tooltip('fixTitle')
-                        .tooltip('show')
-                        .css('outline', '1px solid red')
-                        .focus();
+      showValidationError(this.inputs.amount, "Enter a valid number.");
       return false;
     }
 
@@ -140,12 +135,7 @@ var V2W = (function ($) {
       });
 
       if (density === undefined) {
-        this.inputs.ingredient.tooltip('hide')
-                              .attr('data-original-title', "No ingredient matching '" + ingredient + "'")
-                              .tooltip('fixTitle')
-                              .tooltip('show')
-                              .css('outline', '1px solid red')
-                              .focus();
+        showValidationError(this.inputs.ingredient, "No ingredient matching '" + ingredient + "'")
       }
 
       // do conversion based on units selected
@@ -171,39 +161,15 @@ var V2W = (function ($) {
       pounds = grams / this.g_lb;
       ounces = grams / this.g_oz;
 
-      var poundsOutput = this.templates.measure({num: pounds, abbr: "lb"});
-      var ouncesOutput = this.templates.measure({num: ounces, abbr: "oz"});
+      var poundsOutput = this.templates.measure({num: pounds, abbr: "lb"})
+        , ouncesOutput = this.templates.measure({num: ounces, abbr: "oz"});
 
-      $resultsCell.html(this.templates.resultCell({
-        amount:     amount,
-        units:      ((amount == 1) ? unitDesc.slice(0, unitDesc.length-1) : unitDesc),
-        ingredient: ingredient,
-        grams:      gramsOutput,
-        pounds:     poundsOutput,
-        ounces:     ouncesOutput
-      }));
+      $gramsCell.html(this.templates.resultCell({amount: gramsOutput}));
+      $poundsCell.html(this.templates.resultCell({amount: poundsOutput}));
+      $ouncesCell.html(this.templates.resultCell({amount: ouncesOutput}));
 
-      this.buttons.reset = $('button#reset-btn');
-      this.buttons.reset.on('click', $.proxy(this.resetForm, this)).show('fast');
-
-      if (this.firstResult === true) {
-        $resultsRow.show('fast');
-      }
-      this.firstResult = false;
+      this.table.append(this.templates.inputRow());
     }
-  };
-
-  app.resetForm = function (e) {
-    $el = $(e.currentTarget);
-    $el.hide().parents('tr.results-row').hide();
-
-    this.inputs.ingredient.val("");
-    this.inputs.amount.val("");
-    this.inputs.unit.val("t");
-
-    this.inputs.amount.focus();
-
-    this.firstResult = true;
   };
 
   return app;
@@ -215,4 +181,13 @@ $(function () {
 
 var formatNumber = function (num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+var showValidationError = function (input, errorMsg) {
+  input.tooltip('hide')
+       .attr('data-original-title', errorMsg)
+       .tooltip('fixTitle')
+       .tooltip('show')
+       .css('outline', '1px solid red')
+       .focus();
 };
