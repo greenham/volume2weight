@@ -42,9 +42,9 @@
             <td>
               <input type="text" autocomplete="off" class="ingredient-input form-control input-lg" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
             </td>
-            <td class="grams-result"></td>
-            <td class="pounds-result"></td>
-            <td class="ounces-result"></td>
+            <td class="grams-result result-cell"></td>
+            <td class="pounds-result result-cell"></td>
+            <td class="ounces-result result-cell"></td>
           </tr>
         </tbody>
       </table>

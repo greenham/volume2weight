@@ -16,24 +16,10 @@ a.logo img {
   padding-right: 20px;
 }
 
-.conversion-result {
-  font-size: 28px;
-}
-
-.conversion-result span {
-  margin: 0 5px;
-}
-
-.results-row {
-  display: none;
+.result-cell {
+  text-align: right;
 }
 
 .footer {
   margin-top: 50px;
-}
-
-@media screen and (max-width:768px) {
-  .conversion-result {
-    font-size: 12px;
-  }
 }
