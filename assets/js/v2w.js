@@ -4,7 +4,8 @@ var V2W = (function ($) {
 
   app.densities       = [];
   app.ingredientNames = [];
-  app.table           = null;
+  app.$table          = null;
+  app.ingredientRows  = [];
   app.inputs          = {};
   app.buttons         = {};
 
@@ -70,28 +71,37 @@ var V2W = (function ($) {
       // @todo handle this gracefully
     }
 
-    this.table = $('#recipe-table');
-
-    this.inputs = {
-      ingredient: $('input#ingredient'),
-      amount:     $('input#amount'),
-      unit:       $('select#unit')
-    };
-
     this.ingredientNames = _.map(this.densities, function (item) {
       return item.name;
     });
 
-    this.inputs.ingredient.typeahead({
+    this.$table = $('#recipe-table');
+
+    // initialize the first row
+    this.ingredientRows.push(this.initRow(this.$table.find('tr.input-row')));
+  };
+
+  app.initRow = function ($row) {
+    var inputs = {
+      amountInput:     $row.find('.amount-input'),
+      unitInput:       $row.find('.unit-input'),
+      ingredientInput: $row.find('.ingredient-input')
+    };
+
+    inputs.ingredientInput.typeahead({
       source: this.ingredientNames,
       minLength: 2
     });
 
-    this.inputs.ingredient.change($.proxy(this.doConversion, this)).tooltip();
-    this.inputs.amount.change($.proxy(this.doConversion, this)).tooltip().focus();
-    this.inputs.unit.change($.proxy(this.doConversion, this)).tooltip();
+    inputs.ingredientInput.change($.proxy(this.doConversion, this)).tooltip();
+    inputs.amountInput.change($.proxy(this.doConversion, this)).tooltip().focus();
+    inputs.unitInput.change($.proxy(this.doConversion, this)).tooltip();
 
-    this.inputs.unit.keyup($.proxy(this.doConversion, this));
+    inputs.unitInput.keyup($.proxy(this.doConversion, this));
+
+    inputs.amountInput.focus();
+
+    return inputs;
   };
 
   app.doConversion = function (e) {
@@ -99,29 +109,33 @@ var V2W = (function ($) {
       return false;
     }
 
-    var $el          = $(e.currentTarget)
-      , $inputRow    = $el.parent().parent()
-      , $gramsCell   = $inputRow.find('.grams-result')
-      , $poundsCell  = $inputRow.find('.pounds-result')
-      , $ouncesCell  = $inputRow.find('.ounces-result');
+    var $el              = $(e.currentTarget)
+      , $inputRow        = $el.parent().parent()
+      , $amountInput     = $inputRow.find('.amount-input')
+      , $unitInput       = $inputRow.find('.unit-input')
+      , $ingredientInput = $inputRow.find('.ingredient-input')
+      , $gramsCell       = $inputRow.find('.grams-result')
+      , $poundsCell      = $inputRow.find('.pounds-result')
+      , $ouncesCell      = $inputRow.find('.ounces-result');
 
-    var ingredient   = this.inputs.ingredient.val()
-      , amount       = this.inputs.amount.val()
-      , selectedUnit = this.inputs.unit.find('option:selected')
+    var ingredient   = $ingredientInput.val()
+      , amount       = $amountInput.val()
+      , selectedUnit = $unitInput.find('option:selected')
       , unit         = selectedUnit.val()
-      , unitDesc     = selectedUnit.text();
+      , unitDesc     = selectedUnit.text()
+      , firstResult  = ($gramsCell.html().length === 0);
 
     var grams, kilos, pounds, ounces;
 
-    this.inputs.amount.tooltip('destroy').css('outline', 'none');
-    this.inputs.ingredient.tooltip('destroy').css('outline', 'none');
+    $amountInput.tooltip('destroy').css('outline', 'none');
+    $ingredientInput.tooltip('destroy').css('outline', 'none');
 
     if (ingredient.length === 0 || amount.length === 0) {
       return false;
     }
 
     if ($.isNumeric(amount) === false || amount < 0) {
-      showValidationError(this.inputs.amount, "Enter a valid number.");
+      showValidationError($amountInput, "Enter a valid number.");
       return false;
     }
 
@@ -135,7 +149,7 @@ var V2W = (function ($) {
       });
 
       if (density === undefined) {
-        showValidationError(this.inputs.ingredient, "No ingredient matching '" + ingredient + "'")
+        showValidationError($ingredientInput, "No ingredient matching '" + ingredient + "'")
       }
 
       // do conversion based on units selected
@@ -168,7 +182,12 @@ var V2W = (function ($) {
       $poundsCell.html(this.templates.resultCell({amount: poundsOutput}));
       $ouncesCell.html(this.templates.resultCell({amount: ouncesOutput}));
 
-      this.table.append(this.templates.inputRow());
+      if (firstResult === true)
+      {
+        var $newRow = $(this.templates.inputRow());
+        this.$table.append($newRow);
+        this.ingredientRows.push(this.initRow($newRow));
+      }
     }
   };
 

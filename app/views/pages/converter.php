@@ -15,10 +15,10 @@
         <tbody>
           <tr class="input-row">
             <td>
-              <input type="number" id="amount" autocomplete="off" size="3" min="0" class="form-control input-lg" placeholder="" title="" data-toggle="tooltip">
+              <input type="number" autocomplete="off" size="3" min="0" class="amount-input form-control input-lg" placeholder="" title="" data-toggle="tooltip">
             </td>
             <td>
-              <select id="unit" class="form-control input-lg" title="" data-toggle="tooltip">
+              <select class="unit-input form-control input-lg" title="" data-toggle="tooltip">
                 <optgroup label="US Volume">
                   <option value="t" selected>teaspoons</option>
                   <option value="T">tablespoons</option>
@@ -40,7 +40,7 @@
               </select>
             </td>
             <td>
-              <input type="text" id="ingredient" autocomplete="off" class="form-control input-lg" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
+              <input type="text" autocomplete="off" class="ingredient-input form-control input-lg" placeholder="Start typing an ingredient name..." title="" data-toggle="tooltip">
             </td>
             <td class="grams-result"></td>
             <td class="pounds-result"></td>
