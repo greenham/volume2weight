@@ -1,9 +1,9 @@
 <?php
 
-require_once('config.php');
+require_once('app/configs/config.php');
 
 const STATUS_SUCCESS = 'success';
-const STATUS_ERROR = 'error';
+const STATUS_ERROR   = 'error';
 
 $input = $_POST;
 
