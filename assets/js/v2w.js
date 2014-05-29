@@ -75,7 +75,7 @@ var V2W = (function ($) {
       return item.name;
     });
 
-    this.$table = $('#recipe-table');
+    this.$table = $('#recipe-table tbody');
 
     // initialize the first row
     this.ingredientRows.push(this.initRow(this.$table.find('tr.input-row')));
@@ -185,7 +185,7 @@ var V2W = (function ($) {
       if (firstResult === true)
       {
         var $newRow = $(this.templates.inputRow());
-        this.$table.append($newRow);
+        this.$table.prepend($newRow);
         this.ingredientRows.push(this.initRow($newRow));
       }
     }
