@@ -10,16 +10,16 @@ var V2W = (function ($) {
   app.buttons         = {};
 
   app.unitConversions = {
-      "ml":   1,
-      "dl":   100,
-      "l":    1000,
-      "t":    5,
-      "T":    15,
-      "floz": 29.6,
-      "c":    237,
-      "pt":   473,
-      "qt":   946,
-      "gal":  3785
+    "ml":   1,
+    "dl":   100,
+    "l":    1000,
+    "t":    5,
+    "T":    15,
+    "floz": 29.6,
+    "c":    237,
+    "pt":   473,
+    "qt":   946,
+    "gal":  3785
   };
 
   app.g_lb = 453;
@@ -28,7 +28,7 @@ var V2W = (function ($) {
   app.templates = {
     measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>"),
     inputRow:   _.template('<tr class="input-row">'+$('tbody tr.input-row').html()+'</tr>'),
-    resultCell: _.template('<h3><%= amount %></h3>')
+    resultCell: _.template('<h4><%= amount %></h4>')
   };
 
   app.initData = function () {
@@ -187,6 +187,10 @@ var V2W = (function ($) {
         var $newRow = $(this.templates.inputRow());
         this.$table.prepend($newRow);
         this.ingredientRows.push(this.initRow($newRow));
+
+        if (unit === "units") {
+          $unitInput.val('');
+        }
       }
     }
   };
