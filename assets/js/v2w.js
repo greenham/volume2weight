@@ -130,7 +130,7 @@ var V2W = (function ($) {
     $amountInput.tooltip('destroy').css('outline', 'none');
     $ingredientInput.tooltip('destroy').css('outline', 'none');
 
-    if (ingredient.length === 0 || amount.length === 0) {
+    if (ingredient.length === 0) {
       return false;
     }
 
