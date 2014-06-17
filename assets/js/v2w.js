@@ -28,7 +28,7 @@ var V2W = (function ($) {
   app.templates = {
     measure:    _.template("<% print(formatNumber(num.toFixed(2))); %> <em><%= abbr %></em>"),
     inputRow:   _.template('<tr class="input-row">'+$('tbody tr.input-row').html()+'</tr>'),
-    resultCell: _.template('<h4><%= amount %></h4>')
+    resultCell: _.template('<h3><%= amount %></h3>')
   };
 
   app.initData = function () {
@@ -79,6 +79,13 @@ var V2W = (function ($) {
 
     // initialize the first row
     this.ingredientRows.push(this.initRow(this.$table.find('tr.input-row')));
+
+    // handle row deletions
+    $('.remove-ingredient').on('click', function (e) {
+      $btn = $(e.currentTarget);
+      $row = $btn.parents('.input-row');
+      app.removeRow($row);
+    });
   };
 
   app.initRow = function ($row) {
@@ -104,13 +111,17 @@ var V2W = (function ($) {
     return inputs;
   };
 
+  app.removeRow = function ($row) {
+    $row.fadeOut('fast').remove();
+  };
+
   app.doConversion = function (e) {
     if (e.type == "keyup" && e.keyCode != "38" && e.keyCode != "40") {
       return false;
     }
 
     var $el              = $(e.currentTarget)
-      , $inputRow        = $el.parent().parent()
+      , $inputRow        = $el.parents('.input-row')
       , $amountInput     = $inputRow.find('.amount-input')
       , $unitInput       = $inputRow.find('.unit-input')
       , $ingredientInput = $inputRow.find('.ingredient-input')
@@ -129,6 +140,10 @@ var V2W = (function ($) {
 
     $amountInput.tooltip('destroy').css('outline', 'none');
     $ingredientInput.tooltip('destroy').css('outline', 'none');
+
+    if (firstResult === false && ingredient.length === 0 && amount.length === 0) {
+      // @todo whack this row?
+    }
 
     if (ingredient.length === 0) {
       return false;
@@ -184,6 +199,10 @@ var V2W = (function ($) {
 
       if (firstResult === true)
       {
+        $ingredientInput.siblings('.input-group-addon')
+                        .find('.remove-ingredient')
+                        .removeClass('disabled');
+
         var $newRow = $(this.templates.inputRow());
         this.$table.prepend($newRow);
         this.ingredientRows.push(this.initRow($newRow));
