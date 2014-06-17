@@ -79,13 +79,6 @@ var V2W = (function ($) {
 
     // initialize the first row
     this.ingredientRows.push(this.initRow(this.$table.find('tr.input-row')));
-
-    // handle row deletions
-    $('.remove-ingredient').on('click', function (e) {
-      $btn = $(e.currentTarget);
-      $row = $btn.parents('.input-row');
-      app.removeRow($row);
-    });
   };
 
   app.initRow = function ($row) {
@@ -94,6 +87,8 @@ var V2W = (function ($) {
       unitInput:       $row.find('.unit-input'),
       ingredientInput: $row.find('.ingredient-input')
     };
+
+    var $removeBtn = $row.find('.remove-ingredient');
 
     inputs.ingredientInput.typeahead({
       source: this.ingredientNames,
@@ -105,6 +100,13 @@ var V2W = (function ($) {
     inputs.unitInput.change($.proxy(this.doConversion, this)).tooltip();
 
     inputs.unitInput.keyup($.proxy(this.doConversion, this));
+
+    // handle row deletions
+    $removeBtn.click(function (e) {
+      $btn = $(e.currentTarget);
+      $row = $btn.parents('.input-row');
+      app.removeRow($row);
+    });
 
     inputs.amountInput.focus();
 
