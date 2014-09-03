@@ -13,6 +13,6 @@
     <? endif; ?>
   </div>
   <div class="col-md-4">
-    <p class="text-right">&copy; <?= date('Y'); ?> <a href="https://greenhamsolutions.com" target="_blank"><img src="https://greenhamsolutions.com/favicon.ico"> Green Ham Solutions LLC</a></p>
+    <p class="text-right">&copy; <?= date('Y'); ?> <a href="http://greenhamsolutions.com" target="_blank"><img src="http://greenhamsolutions.com/favicon.ico"> Green Ham Solutions LLC</a></p>
   </div>
 </div>
