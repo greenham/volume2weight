@@ -2,8 +2,9 @@
     <h1>Kitchen Scales</h1>
 
     <p class="lead">
-        I like having two scales in my arsenal. One for everyday weighing with a decent capacity,
-        and one with a little higher precision for working with very small amounts.
+        I like having two scales in my arsenal.<br><br>
+        One for everyday weighing with a decent capacity, and one with a little higher precision for working with very small amounts.<br><br>
+        I own and personally recommend the two scales listed below.
     </p>
 
     <div class="row">
