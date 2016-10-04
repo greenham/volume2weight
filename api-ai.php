@@ -265,6 +265,7 @@ function response($data)
 function errorResponse($httpCode, $message)
 {
     http_response_code($httpCode);
+    error_log($message);
     error_log(json_encode($_SERVER));
     error_log(json_encode($_POST));
     die(json_encode(
