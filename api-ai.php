@@ -267,7 +267,7 @@ function errorResponse($httpCode, $message)
     http_response_code($httpCode);
     error_log($message);
     error_log(json_encode($_SERVER));
-    error_log(json_encode($_POST));
+    error_log(file_get_contents('php://input'));
     die(json_encode(
         ["status" => ["code" => $httpCode, "errorType" => $message]]
     ));
