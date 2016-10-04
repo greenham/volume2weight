@@ -7,6 +7,8 @@ $apiConf = $config['api_keys']['api-ai'];
 $apiKeyName = $apiConf['apiKeyName'];
 $apiKey = $apiConf['apiKey'];
 
+error_log(var_dump($_SERVER['CONTENT_TYPE']));
+
 if ($_SERVER['CONTENT_TYPE'] != 'application/json')
 {
     errorResponse(400, "Invalid content-type");
