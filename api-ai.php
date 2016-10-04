@@ -37,7 +37,7 @@ if (isset($request->result))
 
         if ($conversionResult !== false)
         {
-            $speech = "{$volume['amount']} {$volume['unit']} of {$ingredient} weighs approximately {$conversionResult['amount']} {$conversionResult['unit']}";
+            $speech = "{$volume['amount']} {$volume['unit']} of {$ingredient}, weighs approximately {$conversionResult['amount']} {$conversionResult['unit']}";
             $response = [
                 'speech' => $speech,
                 'displayText' => $speech,
