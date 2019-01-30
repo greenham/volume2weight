@@ -213,6 +213,8 @@ var V2W = (function ($) {
           $unitInput.val('');
         }
       }
+
+      $ingredientInput.attr('disabled', 'disabled');
     }
   };
 
