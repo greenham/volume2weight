@@ -94,7 +94,7 @@ const V2W = (function($, utils) {
 
     // handle row deletions
     $removeBtn.click(function(e) {
-      $btn = $(e.currentTarget);
+      let $btn = $(e.currentTarget);
       $row = $btn.parents(".input-row");
       app.removeRow($row);
     });
@@ -160,11 +160,12 @@ const V2W = (function($, utils) {
         return item.name == ingredient;
       });
 
-      if (density === undefined) {
+      if (typeof density === "undefined") {
         showValidationError(
           $ingredientInput,
           "No ingredient matching '" + ingredient + "'"
         );
+        return false;
       }
 
       // do conversion based on units selected
