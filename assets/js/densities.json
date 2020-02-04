@@ -1,0 +1,1392 @@
+[
+  {
+    "name": "allspice, ground",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "almonds, ground",
+    "g_whole": null,
+    "g_ml": 0.36
+  },
+  {
+    "name": "almonds, sliced",
+    "g_whole": null,
+    "g_ml": 0.39
+  },
+  {
+    "name": "almonds, whole",
+    "g_whole": null,
+    "g_ml": 0.66
+  },
+  {
+    "name": "anchovies",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "anise seed, whole",
+    "g_whole": null,
+    "g_ml": 0.45
+  },
+  {
+    "name": "apples, dried",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "apples, sliced",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "apricots, dried",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "arrowroot",
+    "g_whole": null,
+    "g_ml": 0.95
+  },
+  {
+    "name": "arrowroot flour",
+    "g_whole": null,
+    "g_ml": 0.54
+  },
+  {
+    "name": "bacon fat",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "baking powder",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "baking soda",
+    "g_whole": null,
+    "g_ml": 0.87
+  },
+  {
+    "name": "bamboo shoots",
+    "g_whole": null,
+    "g_ml": 1.14
+  },
+  {
+    "name": "bananas, mashed",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "bananas, sliced",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "barley flour",
+    "g_whole": null,
+    "g_ml": 0.63
+  },
+  {
+    "name": "barley, uncooked",
+    "g_whole": null,
+    "g_ml": 0.78
+  },
+  {
+    "name": "basil, dried",
+    "g_whole": null,
+    "g_ml": 0.11
+  },
+  {
+    "name": "basil, dried leaves",
+    "g_whole": null,
+    "g_ml": 0.14
+  },
+  {
+    "name": "bay leaf, crumbled",
+    "g_whole": null,
+    "g_ml": 0.12
+  },
+  {
+    "name": "beans, dried",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "beef, cooked",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "beef, raw",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "biscuit mix (Bisquick)",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "blackberries, raw",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "blue corn meal",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "blueberries, raw",
+    "g_whole": null,
+    "g_ml": 0.63
+  },
+  {
+    "name": "bran, unsifted",
+    "g_whole": null,
+    "g_ml": 0.23
+  },
+  {
+    "name": "brazil nuts, whole",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "bread crumbs, fresh",
+    "g_whole": null,
+    "g_ml": 0.25
+  },
+  {
+    "name": "bread crumbs, packaged",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "buckwheat groats",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "bulgur, dry",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "butter",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "butter, stick",
+    "g_whole": 114.75,
+    "g_ml": 0.97
+  },
+  {
+    "name": "buttermilk",
+    "g_whole": null,
+    "g_ml": 1.04
+  },
+  {
+    "name": "cabbage, shredded",
+    "g_whole": null,
+    "g_ml": 1.44
+  },
+  {
+    "name": "cake crumbs, fresh",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "candied lemon peel",
+    "g_whole": null,
+    "g_ml": 0.57
+  },
+  {
+    "name": "candied orange peel",
+    "g_whole": null,
+    "g_ml": 0.53
+  },
+  {
+    "name": "caraway seed, whole",
+    "g_whole": null,
+    "g_ml": 0.45
+  },
+  {
+    "name": "cardamom, ground",
+    "g_whole": null,
+    "g_ml": 0.39
+  },
+  {
+    "name": "carob flour",
+    "g_whole": null,
+    "g_ml": 0.44
+  },
+  {
+    "name": "carrots, raw, chopped",
+    "g_whole": null,
+    "g_ml": 0.54
+  },
+  {
+    "name": "carrots, raw, grated",
+    "g_whole": null,
+    "g_ml": 0.46
+  },
+  {
+    "name": "cashews, oil roasted",
+    "g_whole": null,
+    "g_ml": 0.47
+  },
+  {
+    "name": "cauliflower fleurets",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "cayenne, powder",
+    "g_whole": null,
+    "g_ml": 0.35
+  },
+  {
+    "name": "celery seed",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "cereal, Rice Krispies",
+    "g_whole": null,
+    "g_ml": 0.09
+  },
+  {
+    "name": "cheese, cheddar, grated",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "cheese, colby, grated",
+    "g_whole": null,
+    "g_ml": 0.47
+  },
+  {
+    "name": "cheese, cottage",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "cheese, cream",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "cheese, grated parmesan",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "cheese, jack, grated",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "chervil, dried",
+    "g_whole": null,
+    "g_ml": 0.13
+  },
+  {
+    "name": "chili powder",
+    "g_whole": null,
+    "g_ml": 0.53
+  },
+  {
+    "name": "chives, chopped dried",
+    "g_whole": null,
+    "g_ml": 0.03
+  },
+  {
+    "name": "chives, chopped fresh",
+    "g_whole": null,
+    "g_ml": 0.21
+  },
+  {
+    "name": "chocolate chips",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "chocolate, cocoa powder",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "chocolate, grated",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "chocolate, melted",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "cinnamon, ground",
+    "g_whole": null,
+    "g_ml": 0.52
+  },
+  {
+    "name": "cloves, ground",
+    "g_whole": null,
+    "g_ml": 0.41
+  },
+  {
+    "name": "cloves, whole",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "cocoa powder",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "coconut, shredded",
+    "g_whole": null,
+    "g_ml": 0.32
+  },
+  {
+    "name": "coffee, ground",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "coffee, instant",
+    "g_whole": null,
+    "g_ml": 0.23
+  },
+  {
+    "name": "coriander seed",
+    "g_whole": null,
+    "g_ml": 0.33
+  },
+  {
+    "name": "corn, sweet yellow, raw",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "cornmeal",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "cornstarch (cornflour)",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "cracker crumbs",
+    "g_whole": null,
+    "g_ml": 0.25
+  },
+  {
+    "name": "cranberries, raw, chopped",
+    "g_whole": null,
+    "g_ml": 0.46
+  },
+  {
+    "name": "cranberries, raw, whole",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "cream",
+    "g_whole": null,
+    "g_ml": 1.01
+  },
+  {
+    "name": "cream of tartar",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "cream of wheat",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "crisco, melted",
+    "g_whole": null,
+    "g_ml": 0.89
+  },
+  {
+    "name": "crisco, solid",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "cumin seed, whole",
+    "g_whole": null,
+    "g_ml": 0.4
+  },
+  {
+    "name": "currants",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "curry powder",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "dates, chopped",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "dill seed",
+    "g_whole": null,
+    "g_ml": 0.44
+  },
+  {
+    "name": "egg",
+    "g_whole": 60.5,
+    "g_ml": 0.97
+  },
+  {
+    "name": "egg noodles",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "egg white",
+    "g_whole": 34.5,
+    "g_ml": 0.93
+  },
+  {
+    "name": "egg yolk",
+    "g_whole": 20,
+    "g_ml": 1.14
+  },
+  {
+    "name": "egg, beaten",
+    "g_whole": 60.5,
+    "g_ml": 0.97
+  },
+  {
+    "name": "elderberries, raw",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "evaporated milk",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "farina",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "fat, duck",
+    "g_whole": null,
+    "g_ml": 0.87
+  },
+  {
+    "name": "fennel seed, whole",
+    "g_whole": null,
+    "g_ml": 0.39
+  },
+  {
+    "name": "fenugreek seed",
+    "g_whole": null,
+    "g_ml": 0.74
+  },
+  {
+    "name": "figs, dried",
+    "g_whole": null,
+    "g_ml": 0.66
+  },
+  {
+    "name": "flour",
+    "g_whole": null,
+    "g_ml": 0.6
+  },
+  {
+    "name": "flour, plain wheat",
+    "g_whole": null,
+    "g_ml": 0.6
+  },
+  {
+    "name": "flour, plain wheat - scooped",
+    "g_whole": null,
+    "g_ml": 0.65
+  },
+  {
+    "name": "flour, plain wheat - spooned",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "flour, potato",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "flour, rice",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "flour, semolina",
+    "g_whole": null,
+    "g_ml": 0.74
+  },
+  {
+    "name": "flour, whole wheat",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "fungus, wood ear",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "garlic powder",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "garlic, minced",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "gelatin",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "ginger root, raw",
+    "g_whole": null,
+    "g_ml": 0.4
+  },
+  {
+    "name": "ginger root, raw, slices",
+    "g_whole": null,
+    "g_ml": 0.41
+  },
+  {
+    "name": "ginger, crystal",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "ginger, fresh",
+    "g_whole": null,
+    "g_ml": 0.97
+  },
+  {
+    "name": "ginger, ground",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "gooseberries, raw",
+    "g_whole": null,
+    "g_ml": 0.63
+  },
+  {
+    "name": "graham cracker crumbs",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "grape nuts",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "gumdrops",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "gummi bears",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "hazelnuts, whole",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "honey",
+    "g_whole": null,
+    "g_ml": 1.44
+  },
+  {
+    "name": "kasha",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "ketchup",
+    "g_whole": null,
+    "g_ml": 1.16
+  },
+  {
+    "name": "lard",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "lemon juice",
+    "g_whole": null,
+    "g_ml": 1.03
+  },
+  {
+    "name": "lemon rind, grated",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "lentils",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "macaroni, uncooked",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "mace, ground",
+    "g_whole": null,
+    "g_ml": 0.35
+  },
+  {
+    "name": "margarine",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "marjoram, dried",
+    "g_whole": null,
+    "g_ml": 0.11
+  },
+  {
+    "name": "marshmallows, small",
+    "g_whole": null,
+    "g_ml": 0.21
+  },
+  {
+    "name": "mashed potatoes",
+    "g_whole": null,
+    "g_ml": 0.89
+  },
+  {
+    "name": "mayonnaise",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "milk",
+    "g_whole": null,
+    "g_ml": 1
+  },
+  {
+    "name": "milk, evaporated",
+    "g_whole": null,
+    "g_ml": 0.93
+  },
+  {
+    "name": "milk, powdered",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "millet flour",
+    "g_whole": null,
+    "g_ml": 0.5
+  },
+  {
+    "name": "molasses",
+    "g_whole": null,
+    "g_ml": 1.45
+  },
+  {
+    "name": "mulberries, raw",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "mushrooms, Chinese black",
+    "g_whole": null,
+    "g_ml": 0.21
+  },
+  {
+    "name": "mushrooms, chopped",
+    "g_whole": null,
+    "g_ml": 0.32
+  },
+  {
+    "name": "mushrooms, sliced",
+    "g_whole": null,
+    "g_ml": 0.28
+  },
+  {
+    "name": "mushrooms, whole",
+    "g_whole": null,
+    "g_ml": 0.25
+  },
+  {
+    "name": "mustard seed",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "mustard seed, ground",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "mustard, dry",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "mustard, prepared",
+    "g_whole": null,
+    "g_ml": 1.06
+  },
+  {
+    "name": "nutmeg, ground",
+    "g_whole": null,
+    "g_ml": 0.47
+  },
+  {
+    "name": "oatmeal, uncooked",
+    "g_whole": null,
+    "g_ml": 0.34
+  },
+  {
+    "name": "oats, rolled",
+    "g_whole": null,
+    "g_ml": 0.34
+  },
+  {
+    "name": "oats, steel-cut",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "oil, vegetable",
+    "g_whole": null,
+    "g_ml": 0.89
+  },
+  {
+    "name": "olive oil",
+    "g_whole": null,
+    "g_ml": 0.81
+  },
+  {
+    "name": "olives, chopped",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "onion, chopped",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "onion, minced",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "onion, sliced",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "orange rind, grated",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "oregano, dried, ground",
+    "g_whole": null,
+    "g_ml": 0.36
+  },
+  {
+    "name": "oregano, dried, leaves",
+    "g_whole": null,
+    "g_ml": 0.2
+  },
+  {
+    "name": "oreo cookies, crushed",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "paprika",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "paprika powder",
+    "g_whole": null,
+    "g_ml": 0.45
+  },
+  {
+    "name": "parsley, dried",
+    "g_whole": null,
+    "g_ml": 0.11
+  },
+  {
+    "name": "parsley, fresh",
+    "g_whole": null,
+    "g_ml": 0.17
+  },
+  {
+    "name": "pasta, egg noodles",
+    "g_whole": null,
+    "g_ml": 0.38
+  },
+  {
+    "name": "pasta, macaroni",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "peanut butter",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "peanuts",
+    "g_whole": null,
+    "g_ml": 0.62
+  },
+  {
+    "name": "peanuts, chopped",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "peanuts, oil roasted",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "peas, green, raw",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "peas, uncooked",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "pecans",
+    "g_whole": null,
+    "g_ml": 0.46
+  },
+  {
+    "name": "pecans, chopped",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "pecans, ground",
+    "g_whole": null,
+    "g_ml": 0.42
+  },
+  {
+    "name": "pecans, shelled",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "pepper, black, ground",
+    "g_whole": null,
+    "g_ml": 0.46
+  },
+  {
+    "name": "pepper, white, ground",
+    "g_whole": null,
+    "g_ml": 0.47
+  },
+  {
+    "name": "peppercorns, black",
+    "g_whole": null,
+    "g_ml": 0.57
+  },
+  {
+    "name": "peppercorns, white",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "peppers, chopped chili",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "pignolias (pine nuts)",
+    "g_whole": null,
+    "g_ml": 0.53
+  },
+  {
+    "name": "pistachio nuts, raw",
+    "g_whole": null,
+    "g_ml": 0.52
+  },
+  {
+    "name": "poppy seeds",
+    "g_whole": null,
+    "g_ml": 0.58
+  },
+  {
+    "name": "potato flour",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "potatoes, cooked diced",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "potatoes, mashed",
+    "g_whole": null,
+    "g_ml": 0.89
+  },
+  {
+    "name": "potatoes, sliced raw",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "pumpkin pie spice",
+    "g_whole": null,
+    "g_ml": 0.37
+  },
+  {
+    "name": "pumpkin, cooked",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "quinoa, uncooked",
+    "g_whole": null,
+    "g_ml": 0.72
+  },
+  {
+    "name": "raisins, seedless, not packed",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "raisins, seedless, packed",
+    "g_whole": null,
+    "g_ml": 0.7
+  },
+  {
+    "name": "raspberries, raw",
+    "g_whole": null,
+    "g_ml": 0.52
+  },
+  {
+    "name": "rice flour, brown",
+    "g_whole": null,
+    "g_ml": 0.67
+  },
+  {
+    "name": "rice flour, white",
+    "g_whole": null,
+    "g_ml": 0.67
+  },
+  {
+    "name": "rice, arborio uncooked",
+    "g_whole": null,
+    "g_ml": 0.77
+  },
+  {
+    "name": "rice, brown, long-grain, uncooked",
+    "g_whole": null,
+    "g_ml": 0.78
+  },
+  {
+    "name": "rice, brown, medium-grain, uncooked",
+    "g_whole": null,
+    "g_ml": 0.8
+  },
+  {
+    "name": "rice, steamed",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "rice, uncooked",
+    "g_whole": null,
+    "g_ml": 0.89
+  },
+  {
+    "name": "rice, uncooked Basmati",
+    "g_whole": null,
+    "g_ml": 0.83
+  },
+  {
+    "name": "rice, uncooked Jasmin",
+    "g_whole": null,
+    "g_ml": 0.78
+  },
+  {
+    "name": "rice, white, glutinous, uncooked",
+    "g_whole": null,
+    "g_ml": 0.78
+  },
+  {
+    "name": "rice, white, short-grain, uncooked",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "rice, wild, uncooked",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "rosemary, dried",
+    "g_whole": null,
+    "g_ml": 0.22
+  },
+  {
+    "name": "rosemary, fresh",
+    "g_whole": null,
+    "g_ml": 0.11
+  },
+  {
+    "name": "rum (40%)",
+    "g_whole": null,
+    "g_ml": 0.94
+  },
+  {
+    "name": "rye flour, dark",
+    "g_whole": null,
+    "g_ml": 0.54
+  },
+  {
+    "name": "rye flour, light",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "rye flour, medium",
+    "g_whole": null,
+    "g_ml": 0.43
+  },
+  {
+    "name": "saffron",
+    "g_whole": null,
+    "g_ml": 0.14
+  },
+  {
+    "name": "sage, ground",
+    "g_whole": null,
+    "g_ml": 0.13
+  },
+  {
+    "name": "salt, kosher (Morton's)",
+    "g_whole": null,
+    "g_ml": 0.95
+  },
+  {
+    "name": "salt, table",
+    "g_whole": null,
+    "g_ml": 1.18
+  },
+  {
+    "name": "scallions (green onions)",
+    "g_whole": null,
+    "g_ml": 0.21
+  },
+  {
+    "name": "sesame seeds",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "shallots",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "sour cream",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "soy sauce",
+    "g_whole": null,
+    "g_ml": 1.07
+  },
+  {
+    "name": "soymilk",
+    "g_whole": null,
+    "g_ml": 1.03
+  },
+  {
+    "name": "spaghetti, uncooked",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "spearmint, dried",
+    "g_whole": null,
+    "g_ml": 0.11
+  },
+  {
+    "name": "spinach, cooked",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "split peas",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "strawberries, raw, halves",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "strawberries, raw, pureed",
+    "g_whole": null,
+    "g_ml": 0.98
+  },
+  {
+    "name": "sugar",
+    "g_whole": null,
+    "g_ml": 0.87
+  },
+  {
+    "name": "sugar, brown",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "sugar, castor",
+    "g_whole": null,
+    "g_ml": 0.81
+  },
+  {
+    "name": "sugar, confectioner's",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "sugar, granulated",
+    "g_whole": null,
+    "g_ml": 0.87
+  },
+  {
+    "name": "sugar, powdered",
+    "g_whole": null,
+    "g_ml": 0.55
+  },
+  {
+    "name": "sultanas",
+    "g_whole": null,
+    "g_ml": 0.64
+  },
+  {
+    "name": "sunflower seeds, shelled",
+    "g_whole": null,
+    "g_ml": 0.56
+  },
+  {
+    "name": "sweet potatoes, cooked",
+    "g_whole": null,
+    "g_ml": 1.02
+  },
+  {
+    "name": "sweet potatoes, raw",
+    "g_whole": null,
+    "g_ml": 0.76
+  },
+  {
+    "name": "syrup, corn, dark",
+    "g_whole": null,
+    "g_ml": 1.39
+  },
+  {
+    "name": "syrup, corn, light",
+    "g_whole": null,
+    "g_ml": 1.44
+  },
+  {
+    "name": "syrups, maple",
+    "g_whole": null,
+    "g_ml": 1.33
+  },
+  {
+    "name": "tabasco",
+    "g_whole": null,
+    "g_ml": 0.96
+  },
+  {
+    "name": "tarragon, dried leaves",
+    "g_whole": null,
+    "g_ml": 0.12
+  },
+  {
+    "name": "tea",
+    "g_whole": null,
+    "g_ml": 0.32
+  },
+  {
+    "name": "thyme, dried, leaves",
+    "g_whole": null,
+    "g_ml": 0.18
+  },
+  {
+    "name": "thyme, fresh",
+    "g_whole": null,
+    "g_ml": 0.16
+  },
+  {
+    "name": "tiger lily blossoms",
+    "g_whole": null,
+    "g_ml": 0.17
+  },
+  {
+    "name": "tomato paste",
+    "g_whole": null,
+    "g_ml": 1.1
+  },
+  {
+    "name": "tomato puree",
+    "g_whole": null,
+    "g_ml": 1.06
+  },
+  {
+    "name": "tomatoes, chopped",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "tomatoes, crushed, canned",
+    "g_whole": null,
+    "g_ml": 1.08
+  },
+  {
+    "name": "tuna, canned",
+    "g_whole": null,
+    "g_ml": 0.85
+  },
+  {
+    "name": "turmeric, ground",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "vanilla extract",
+    "g_whole": null,
+    "g_ml": 0.88
+  },
+  {
+    "name": "vanilla wafers, crushed",
+    "g_whole": null,
+    "g_ml": 0.68
+  },
+  {
+    "name": "vinegar, balsamic",
+    "g_whole": null,
+    "g_ml": 1.08
+  },
+  {
+    "name": "vinegar, cider",
+    "g_whole": null,
+    "g_ml": 1.01
+  },
+  {
+    "name": "vodka, 40%",
+    "g_whole": null,
+    "g_ml": 0.94
+  },
+  {
+    "name": "walnuts, chopped",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "walnuts, ground",
+    "g_whole": null,
+    "g_ml": 0.36
+  },
+  {
+    "name": "walnuts, shelled",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "water",
+    "g_whole": null,
+    "g_ml": 1
+  },
+  {
+    "name": "wheat flour, whole-grain",
+    "g_whole": null,
+    "g_ml": 0.51
+  },
+  {
+    "name": "wheat germ",
+    "g_whole": null,
+    "g_ml": 0.53
+  },
+  {
+    "name": "wild rice",
+    "g_whole": null,
+    "g_ml": 0.61
+  },
+  {
+    "name": "wine, red",
+    "g_whole": null,
+    "g_ml": 0.99
+  },
+  {
+    "name": "wine, white",
+    "g_whole": null,
+    "g_ml": 0.99
+  },
+  {
+    "name": "yeast, active dry",
+    "g_whole": null,
+    "g_ml": 1.23
+  },
+  {
+    "name": "salt, kosher (Diamond Crystal)",
+    "g_whole": null,
+    "g_ml": 0.59
+  },
+  {
+    "name": "salt, sea (Maldon)",
+    "g_whole": null,
+    "g_ml": 0.49
+  },
+  {
+    "name": "fleur de sel",
+    "g_whole": null,
+    "g_ml": 0.95
+  }
+]

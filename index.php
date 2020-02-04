@@ -19,7 +19,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap3-typeahead.min.js"></script>
     <script src="assets/js/underscore.min.js"></script>
-    <script src="assets/js/v2w.js"></script>
+    <script src="assets/js/v2w.js" type="module"></script>
 
     <? if ($config['ga'] !== false): ?>
       <script>

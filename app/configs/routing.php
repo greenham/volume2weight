@@ -8,6 +8,7 @@ $request = $_REQUEST;
 if ( ! empty($request) || isset($request['p']))
 {
     $page = str_replace('-', '_', $request['p']);
+    $page = str_replace("/", "", $page);
 }
 else
 {
