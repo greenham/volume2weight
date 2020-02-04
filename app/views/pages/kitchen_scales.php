@@ -9,11 +9,11 @@
 
     <div class="row">
         <div class="col-md-6">
-            <p>MIRA Digital Kitchen Scale (11 lbs [4.99 kg] capacity)</p>
+            <p><a href="https://amzn.to/3bd1ssS" target="_blank" class="btn btn-success btn-lg">MIRA Digital Kitchen Scale (11 lb. Capacity)</a></p>
         </div>
 
         <div class="col-md-6">
-            <p>American Weigh 100g x 0.01g Digital Scale</p>
+            <p><a href="https://amzn.to/2GSJTjC" target="_blank" class="btn btn-success btn-lg">American Weigh 100g x 0.01g Digital Scale</a></p>
         </div>
     </div>
 </div>
